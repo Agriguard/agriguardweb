@@ -42,10 +42,12 @@ function SolutionSection() {
           <Text as="span" fontWeight="700">
           AI-powered production risk scores to assess potential risks and plan accordingly
           </Text>
+
           <Text as="span" fontWeight="700">
             hyperlocal, precise, and timely insights tailored to each
             farm's unique needs
           </Text>
+          
           , empowering farmers/enterprises to make informed decisions and enhance their
           production cycles.{" "}
         </Text>
