@@ -42,9 +42,13 @@ function SolutionSection() {
           <Text as="span" fontWeight="700" mb={2}>
             AI-powered production risk scores to assess potential risks and plan accordingly
           </Text>
+          
+
           <Text as="span" fontWeight="700" mb={2}>
             Hyperlocal, precise, and timely insights tailored to each farm's unique needs
           </Text>
+
+
           Empowering farmers/enterprises to make informed decisions and enhance their production cycles.
         </Text>
         <Flex gap={8} textAlign="center" mt={8} flexDir={{base: "column", lg: "row"}}>
