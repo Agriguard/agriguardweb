@@ -18,7 +18,7 @@ function Problem() {
           <Text as="span" fontWeight="700">
             10% drop in crop yield
           </Text>{" "}
-          due to insufficient, untimely and generalised weather data, impacting
+          due to insufficient information, poor management and generalised data, impacting
           food security and farmer livelihood
         </Text>
       </Box>

@@ -23,9 +23,9 @@ const features = [
   },
   {
     iconPath: "/assets/manage.png",
-    title: "Farmer Management",
+    title: "Farm Management",
     description:
-      "Streamline farm operations and enhance collaboration by managing farmer profiles, tasks, and progress",
+      "Streamline farm operations and enhance collaboration by managing farms and farmer profiles, tasks, and progress",
   },
 ];
 

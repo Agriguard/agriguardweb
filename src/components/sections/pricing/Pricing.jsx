@@ -5,7 +5,7 @@ import SectionHeader from "../../shared/SectionHeader";
 
 const pricingPackages = [
   {
-    name: "Farmer Coorp",
+    name: "Farmer Coop",
     price: 10.0,
     priceDescription: "per month",
     packageColor: "primary.900",

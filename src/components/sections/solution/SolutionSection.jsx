@@ -6,7 +6,7 @@ const steps = [
   {
     number: "1",
     title: "Onboard Farmers",
-    description: "Onboard farmers for efficient management",
+    description: "Onboard farms and farmers for efficient management",
   },
   {
     number: "2",
@@ -40,10 +40,13 @@ function SolutionSection() {
         >
           Our solution offers{" "}
           <Text as="span" fontWeight="700">
-            hyperlocal, precise, and timely weather insights tailored to each
+          AI-powered production risk scores to assess potential risks and plan accordingly
+          </Text>
+          <Text as="span" fontWeight="700">
+            hyperlocal, precise, and timely insights tailored to each
             farm's unique needs
           </Text>
-          , empowering farmers to make informed decisions and enhance their
+          , empowering farmers/enterprises to make informed decisions and enhance their
           production cycles.{" "}
         </Text>
         <Flex gap={8} textAlign="center" mt={8} flexDir={{base: "column", lg: "row"}}>
