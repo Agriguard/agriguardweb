@@ -30,27 +30,22 @@ function SolutionSection() {
     <>
       <Box my={4}>
         <SectionHeader firstHeading="Our" secondHeading="Solution" />
-        <Text
-          w={{lg: "60%"}}
-          fontSize={{lg: "xl"}}
-          mx="auto"
-          fontFamily="fonts.body"
-          textAlign="center"
-          mt={4}
-        >
-          Our solution offers{" "}
-          <Text as="span" fontWeight="700" mb={2}>
-            AI-powered production risk scores to assess potential risks and plan accordingly
+        <Box w={{lg: "60%"}} mx="auto" mt={4}>
+          <Text fontSize={{lg: "xl"}} fontFamily="fonts.body" textAlign="center">
+            Our solution offers{" "}
+            <Text as="span" fontWeight="700">
+              AI-powered production risk scores to assess potential risks and plan accordingly
+            </Text>
           </Text>
-          
-
-          <Text as="span" fontWeight="700" mb={2}>
-            Hyperlocal, precise, and timely insights tailored to each farm's unique needs
+          <Text fontSize={{lg: "xl"}} fontFamily="fonts.body" textAlign="center" mt={4}>
+            <Text as="span" fontWeight="700">
+              Hyperlocal, precise, and timely insights tailored to each farm's unique needs
+            </Text>
           </Text>
-
-
-          Empowering farmers/enterprises to make informed decisions and enhance their production cycles.
-        </Text>
+          <Text fontSize={{lg: "xl"}} fontFamily="fonts.body" textAlign="center" mt={4}>
+            Empowering farmers/enterprises to make informed decisions and enhance their production cycles.
+          </Text>
+        </Box>
         <Flex gap={8} textAlign="center" mt={8} flexDir={{base: "column", lg: "row"}}>
           {steps.map((step, index) => {
             return (
