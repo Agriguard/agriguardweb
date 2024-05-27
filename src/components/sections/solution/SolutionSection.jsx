@@ -16,7 +16,7 @@ const steps = [
   {
     number: "3",
     title: "Get Updates",
-    description: "Receive real-time insights for informed decisions",
+    description: "Receive real-time insights for informed decisions by text messages or voice",
   },
   {
     number: "4",

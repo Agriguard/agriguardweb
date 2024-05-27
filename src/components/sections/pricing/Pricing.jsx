@@ -6,8 +6,8 @@ import SectionHeader from "../../shared/SectionHeader";
 const pricingPackages = [
   {
     name: "Farmer Coop",
-    price: 10.0,
-    priceDescription: "per month",
+    price: 8.0,
+    priceDescription: "per year",
     packageColor: "primary.900",
     packageColorReverse: "primary.900",
     buttonColor: "primary.900",
@@ -20,7 +20,7 @@ const pricingPackages = [
   },
   {
     name: "Farm Mapping",
-    price: 50.0,
+    price: 4.0,
     priceDescription: "per acre (per season)",
     packageColor: "secondary.900",
     packageColorReverse: "secondary.900",
@@ -34,8 +34,8 @@ const pricingPackages = [
   },
   {
     name: "Enterprise",
-    price: 2400.0,
-    priceDescription: "per month",
+    price: 300.0,
+    priceDescription: "per year",
     packageColor: "primary.900",
     packageColorReverse: "primary.900",
     buttonColor: "secondary.900",
@@ -101,7 +101,7 @@ const PricingPackage = ({
           {name}
         </Text>
         <Text fontSize={{base: "2xl", lg: "6xl"}} fontWeight="700">
-          {price} GHC
+          {price} USD
         </Text>
         <Text fontSize={{lg:"xl"}}>{priceDescription}</Text>
       </Box>

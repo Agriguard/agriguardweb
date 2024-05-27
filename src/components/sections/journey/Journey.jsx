@@ -44,7 +44,7 @@ function Journey() {
             <Text>
               Our solution offers{" "}
               <Text as="span" fontWeight="700">
-                hyperlocal, precise, and timely insights tailored to
+                farm management with hyperlocal, precise, and timely insights tailored to
                 each farm's unique needs,
               </Text>{" "}
               empowering farmers to manage their farms and make informed decisions and enhance their
