@@ -66,6 +66,8 @@ function Contact() {
           </Flex>
           <Flex
             as="form"
+            action="https://submit-form.com/so66oSc56"
+            method="POST"
             rounded="2xl"
             overflow="hidden"
             shadow="2xl"
@@ -77,11 +79,16 @@ function Contact() {
           >
             <Flex gap={8}>
               <FormControl>
-                <Input type="text" variant="flushed" placeholder="Full Name" />
+                <Input 
+                  type="text" 
+                  name="Full Name"
+                  variant="flushed" 
+                  placeholder="Full Name" />
               </FormControl>
               <FormControl>
                 <Input
                   type="number"
+                  name="Contact"
                   variant="flushed"
                   placeholder="Contact Number"
                 />
@@ -89,21 +96,31 @@ function Contact() {
             </Flex>
             <Flex gap={8}>
               <FormControl>
-                <Input type="text" variant="flushed" placeholder="Location" />
+                <Input 
+                  type="text" 
+                  name="Location"
+                  variant="flushed" 
+                  placeholder="Location" />
               </FormControl>
               <FormControl>
                 <Input
-                  type="number"
+                  type="text"
+                  name="Occupation"
                   variant="flushed"
                   placeholder="Occupation"
                 />
               </FormControl>
             </Flex>
             <FormControl>
-              <Textarea placeholder="Message" variant="flushed" rows={8} />
+              <Textarea 
+              placeholder="Message" 
+              name="Message"
+              variant="flushed" 
+              rows={8} />
             </FormControl>
             <Button
               rounded="full"
+              type="submit"
               size="lg"
               py={{ base: 4, lg: 8 }}
               fontSize="xl"
