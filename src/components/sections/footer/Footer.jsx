@@ -10,11 +10,24 @@ const footerDetails = [
             SlSocialFacebook,
             SlSocialLinkedin,
             RiTwitterXLine
-        ]
+        ], 
+        urls: [
+          "https://www.facebook.com/people/Agriguard/61555017154793/",
+          "https://www.linkedin.com/company/agriguard-ltd/",
+          "https://x.com/agri_guard"
+      ]
     },
     {
         title: "PAGES",
-        pages: ["Home", "About", "Features", "Pricing", "FAQs", "News", "Contact"]
+        pages: ["Home", "About", "Features", "Pricing", "FAQs", "News", "Contact"],
+        urls: [
+          "/",
+          "#about",
+          "#features",
+          "#pricing",
+          "#faqs",
+          "#contact"
+      ]
     },
     {
         title: "CONTACT US",
@@ -36,7 +49,7 @@ function Footer() {
           {column.icons && (
             <Flex gap={3}>
               {column.icons.map((IconComp, iconIndex) => (
-                <Link href="#" key={iconIndex} isExternal textDecoration="none" _hover={{color: "primary.900"}}>
+                <Link href={column.urls[iconIndex]} key={iconIndex} isExternal textDecoration="none" _hover={{color: "primary.900"}}>
                   <Icon as={IconComp} boxSize={6} />
                 </Link>
               ))}
