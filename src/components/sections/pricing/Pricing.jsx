@@ -28,13 +28,13 @@ const pricingPackages = [
     features: [
       "Digital Map",
       "GPS Coordinates",
-      "Farm Size / Area Calculation",
-      "Crop Advisory",
+      "Area Calculation",
+      "Farm Management",
     ],
   },
   {
     name: "Enterprise",
-    price: 300.0,
+    price: 2400.0,
     priceDescription: "per year",
     packageColor: "primary.900",
     packageColorReverse: "primary.900",
@@ -42,7 +42,7 @@ const pricingPackages = [
     features: [
       "Mobile Farm Mapping",
       "SMS & Voice Service",
-      "Farmer Management Suite",
+      "Farmer Management",
       "Dashboard & Analytics",
     ],
   },
