@@ -20,7 +20,7 @@ const footerDetails = [
     {
         title: "PAGES",
         pages: ["Home", "About", "Features", "Pricing", "FAQs", "News", "Contact"],
-        urls: [
+        href: [
           "/",
           "#about",
           "#features",
@@ -59,7 +59,7 @@ function Footer() {
             <List>
               {column.pages.map((page, pageIndex) => (
                 <ListItem key={pageIndex}>
-                  <Link href="#" textDecoration="none" _hover={{color: "primary.900"}}>{page}</Link>
+                  <Link href={column.href[pageIndex]} textDecoration="none" _hover={{color: "primary.900"}}>{page}</Link>
                 </ListItem>
              ))}
             </List>
