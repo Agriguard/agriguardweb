@@ -14,8 +14,8 @@ import SectionHeader from "../../shared/SectionHeader";
 function Contact() {
   return (
     <>
-      <Box id="contact" py={20}>
-        <SectionHeader firstHeading="Let's" secondHeading="Connect" />
+      <Box id="contact" py={{base:4, lg:20}}>
+        <SectionHeader title="Lets Connect" />
         <Text
           w={{ lg: "60%" }}
           fontSize={{ lg: "xl" }}
@@ -77,7 +77,7 @@ function Contact() {
             flexDir="column"
             gap={4}
           >
-            <Flex gap={8}>
+            <Flex gap={8} display={{base: "block", lg: "flex"}}>
               <FormControl>
                 <Input 
                   type="text" 
@@ -85,7 +85,7 @@ function Contact() {
                   variant="flushed" 
                   placeholder="Full Name" />
               </FormControl>
-              <FormControl>
+              <FormControl mt={{base: 4, lg: 0}}>
                 <Input
                   type="number"
                   name="Contact"
@@ -94,7 +94,7 @@ function Contact() {
                 />
               </FormControl>
             </Flex>
-            <Flex gap={8}>
+            <Flex gap={8} display={{base: "block", lg: "flex"}}>
               <FormControl>
                 <Input 
                   type="text" 
@@ -102,7 +102,7 @@ function Contact() {
                   variant="flushed" 
                   placeholder="Location" />
               </FormControl>
-              <FormControl>
+              <FormControl mt={{base: 4, lg: 0}}>
                 <Input
                   type="text"
                   name="Occupation"

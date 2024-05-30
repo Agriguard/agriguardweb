@@ -1,5 +1,8 @@
 /* eslint-disable react/no-unescaped-entities */
 import { Box, Flex, Img, Text } from "@chakra-ui/react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import { Autoplay } from "swiper/modules";
 import SectionHeader from "../../shared/SectionHeader";
 
 const features = [
@@ -32,22 +35,81 @@ const features = [
 function Features() {
   return (
     <>
-      <Box id="features" py={20}>
-      <Text fontFamily="fonts.body" textAlign="center" fontWeight="bold" color="primary.900">Our Features</Text>
+      <Box id="features" py={{ base: 4, lg: 20 }}>
         <Text
-          w={{lg: "65%"}}
-          fontSize={{lg: "3xl"}}
+          fontFamily="fonts.body"
+          textAlign="center"
+          fontWeight="bold"
+          color="primary.900"
+        >
+          Our Features
+        </Text>
+        <Text
+          w={{ lg: "65%" }}
+          fontSize={{ base: "2xl", lg: "3xl" }}
           mx="auto"
           fontFamily="fonts.body"
           textAlign="center"
           fontWeight="700"
           mt={4}
         >
-          Unlock the{" "}
-            power of precision agriculture
-          with Agriguard's innovative features.
+          Unlock the power of precision agriculture with Agriguard's innovative
+          features.
         </Text>
-        <Flex gap={6} flexWrap="wrap" justifyContent="center" mt={4}>
+        <Box
+          display={{ base: "block", lg: "none" }}
+          mt={{ base: 4, lg: "none" }}
+        >
+          <Swiper
+            spaceBetween={10}
+            slidesPerView={1.15}
+            centeredSlides={true}
+            autoplay={{
+              delay: 4500,
+              disableOnInteraction: false,
+            }}
+            grabCursor={true}
+            className="mySwiper"
+            modules={[Autoplay]}
+          >
+            {features.map((feature, index) => {
+              return (
+                <>
+                  <SwiperSlide key={index}>
+                    <Flex
+                      flexDirection="column"
+                      gap={4}
+                      key={index}
+                      fontFamily="fonts.body"
+                      rounded="xl"
+                      border="1px solid #2FB95D45"
+                      p={{base:6, lg:8}}
+                      width={{ lg: "600px" }}
+                      textAlign="center"
+                    >
+                      <Img src={feature.iconPath} mx="auto" />
+                      <Text
+                        fontSize="xl"
+                        fontWeight="700"
+                        color="secondary.900"
+                      >
+                        {feature.title}
+                      </Text>
+                      <Text fontSize={{base: "sm", lg: "md"}}>{feature.description}</Text>
+                    </Flex>
+                  </SwiperSlide>
+                </>
+              );
+            })}
+          </Swiper>
+        </Box>
+        <Flex
+          gap={6}
+          flexWrap="wrap"
+          justifyContent="center"
+          mt={4}
+          display={{ base: "none", lg: "flex" }}
+        >
           {features.map((feature, index) => {
             return (
               <>

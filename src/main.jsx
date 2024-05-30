@@ -4,6 +4,7 @@ import App from './App.jsx'
 import '@fontsource-variable/montserrat';
 import { ChakraProvider } from '@chakra-ui/react'
 import customTheme from './utils/theme/theme.jsx';
+import "./main.css"
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

@@ -4,14 +4,14 @@ import Stats from "./Stats";
 function Problem() {
   return (
     <>
-      <Flex minH={{lg: "85vh"}} flexDir="column" justifyContent="center" alignItems="center" gap={12} px={20} bgColor="text.primaryWithOpacity">
+      <Flex minH={{base: "40vh", lg: "85vh"}} flexDir="column" justifyContent="center" alignItems="center" gap={12} px={{lg: 20}} bgColor="text.primaryWithOpacity">
         <Text
           color="secondary.900"
           textAlign="center"
           fontWeight="300"
           fontSize={{base: "md", lg:"3xl"}}
           fontFamily="fonts.body"
-          mx={4}
+          mx={ 4}
         >
           <Text as="span" fontWeight="700">
             70% of African Farmers
