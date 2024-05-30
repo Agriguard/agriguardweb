@@ -4,7 +4,7 @@ import { Box, Flex, Heading, Img, Text } from "@chakra-ui/react";
 function Journey() {
   return (
     <>
-      <Flex mt={8} flexDir={{ base: "column", lg: "row" }}>
+      <Flex mt={28} py={20} flexDir={{ base: "column", lg: "row" }}>
         <Flex
           fontFamily="fonts.heading"
           alignSelf="center"
@@ -53,7 +53,7 @@ function Journey() {
           </Flex>
         </Flex>
         <Box rounded="2xl" overflow="hidden" shadow="2xl" mt={{base: 8, lg: 0}}>
-          <Img src="/assets/hero_img.png" />
+          <Img src="/assets/carousel-1.jpeg" w={800}/>
         </Box>
       </Flex>
     </>

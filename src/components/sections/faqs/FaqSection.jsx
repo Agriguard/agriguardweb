@@ -1,53 +1,148 @@
 /* eslint-disable react/prop-types */
-import { Box, Flex, Img, Text } from "@chakra-ui/react"
-import SectionHeader from "../../shared/SectionHeader"
+import {
+  Accordion,
+  AccordionButton,
+  AccordionIcon,
+  AccordionItem,
+  AccordionPanel,
+  Box,
+  Button,
+  Card,
+  CardBody,
+  CardFooter,
+  Flex,
+  Heading,
+  Img,
+  Link,
+  Stack,
+  Text,
+} from "@chakra-ui/react";
+import SectionHeader from "../../shared/SectionHeader";
 
 const faqDetails = [
-    {
-        question: "How accurate are Agriguard's weather forecasts?",
-        answer: "Agriguard uses real-time satellite data and advanced forecasting models to provide accurate and reliable weather predictions for your farm's specific location. While no forecast can be 100% precise, our goal is to deliver timely and actionable information to support your decision-making process."
-    },
-    {
-        question: "How does Agriguard's mapping functionality work?",
-        answer: "Agriguard allows mapping the borders of a farm using mobile phone GPS, enabling you to visualize its location and access weather data specific to your area. With our mapping tool, you can accurately identify your farm's boundaries and optimize decision-making based on local weather conditions."
-    },
-    {
-        question: "Can I access Agriguard's services offline?",
-        answer: "While some features may require an internet connection, Agriguard offers offline capabilities for essential functionalities such as viewing historical weather data and accessing basic advisory services. This ensures that farmers in areas with limited connectivity can still benefit from our platform."
-    },
-    {
-        question: "Does Agriguard support local languages?",
-        answer: "Yes, our platform provides multilingual options, allowing farmers to access weather forecasts, advisory services, and other features in their preferred language. We believe that language should not be a barrier to accessing essential agricultural information and resources."
-    },
-]
+  {
+    question: "How accurate are Agriguard's weather forecasts?",
+    answer:
+      "Agriguard uses real-time satellite data and advanced forecasting models to provide accurate and reliable weather predictions for your farm's specific location. While no forecast can be 100% precise, our goal is to deliver timely and actionable information to support your decision-making process.",
+  },
+  {
+    question: "How does Agriguard's mapping functionality work?",
+    answer:
+      "Agriguard allows mapping the borders of a farm using mobile phone GPS, enabling you to visualize its location and access weather data specific to your area. With our mapping tool, you can accurately identify your farm's boundaries and optimize decision-making based on local weather conditions.",
+  },
+  {
+    question: "Can I access Agriguard's services offline?",
+    answer:
+      "While some features may require an internet connection, Agriguard offers offline capabilities for essential functionalities such as viewing historical weather data and accessing basic advisory services. This ensures that farmers in areas with limited connectivity can still benefit from our platform.",
+  },
+  {
+    question: "Does Agriguard support local languages?",
+    answer:
+      "Yes, our platform provides multilingual options, allowing farmers to access weather forecasts, advisory services, and other features in their preferred language. We believe that language should not be a barrier to accessing essential agricultural information and resources.",
+  },
+];
 
 function FaqSection() {
   return (
     <>
-     <Box id="faqs">
-        <SectionHeader firstHeading="Frequently Asked" secondHeading="Questions" />
-        <Flex flexWrap="wrap" gap={4}>
-            {faqDetails.map((detail, index)=> (
-                <FaqCard key={index} {...detail}/>
-            ))}
+      <Box id="faqs" fontFamily="fonts.body" px={20}>
+        <Flex gap={8}>
+          <Box width={{ lg: "50%" }} me="auto">
+            <Text
+              fontSize={{ lg: "3xl" }}
+              mx="auto"
+              fontFamily="fonts.body"
+              fontWeight="700"
+              mt={4}
+            >
+              Find the answers you need!
+            </Text>
+            <Box
+              mt={8}
+              border="1px solid #2FB95D20"
+              rounded="xl"
+              overflow="hidden"
+            >
+              {faqDetails.map((detail, index) => (
+                <FaqCard key={index} {...detail} />
+              ))}
+            </Box>
+          </Box>
+          <Box width="50%">
+            <Card
+              direction={{ base: "column", sm: "row" }}
+              overflow="hidden"
+              bgColor="text.primaryWithOpacity"
+              ms="auto"
+            >
+              <Stack>
+                <CardBody>
+                  <Heading
+                    as="h6"
+                    size="md"
+                    fontFamily="fonts.body"
+                    color="primary.900"
+                  >
+                    Book Farm Mapping
+                  </Heading>
+
+                  <Text py="2">
+                    Get detailed and accurate maps of your farm.that help you
+                    manage your land effectively. From field boundaries to soil
+                    composition and crop distribution, our maps offer invaluable
+                    insights to optimize your farming operations and increase
+                    productivity.
+                  </Text>
+                </CardBody>
+
+                <CardFooter>
+                  <Link href="#contact">
+                      <Button
+                        variant="solid"
+                        bgColor="secondary.900"
+                        color="white"
+                        rounded="full"
+                        _hover={{ bgColor: "primary.900" }}
+                      >
+                        Book Now
+                      </Button>
+                  </Link>
+                </CardFooter>
+              </Stack>
+            </Card>
+          </Box>
         </Flex>
-     </Box>
+      </Box>
     </>
-  )
+  );
 }
 
-const FaqCard = ({question, answer})=> {
-    return (
-        <>
-         <Flex justifyContent="center" alignItems="start" gap={4} width={{lg: "600px"}} shadow="xl" p={8} rounded="xl" mx="auto" fontFamily="fonts.body">
-            <Img src="/assets/question_icon.png"/>
-            <Flex flexDir="column" gap={4}>
-                <Text color="secondary.900" fontWeight="700" fontSize="xl">{question}</Text>
-                <Text>{answer}</Text>
-            </Flex>
-         </Flex>
-        </>
-    )
-}
+const FaqCard = ({ question, answer }) => {
+  return (
+    <>
+      <Accordion allowToggle>
+        <AccordionItem>
+          <h2>
+            <AccordionButton
+              _hover={{ bgColor: "text.primaryWithLessOpacity" }}
+            >
+              <Box
+                as="span"
+                flex="1"
+                textAlign="left"
+                fontWeight={700}
+                color="secondary.900"
+              >
+                {question}
+              </Box>
+              <AccordionIcon />
+            </AccordionButton>
+          </h2>
+          <AccordionPanel pb={4}>{answer}</AccordionPanel>
+        </AccordionItem>
+      </Accordion>
+    </>
+  );
+};
 
-export default FaqSection
+export default FaqSection;

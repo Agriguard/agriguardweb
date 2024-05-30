@@ -1,9 +1,12 @@
-import { Box, Button, Flex, Heading, Img, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, Heading, Img, Link, Text } from "@chakra-ui/react";
+import CarouselSlide from "../../shared/CarouselSlide";
+
+const imgSrc = ["/assets/carousel-3.JPG", "/assets/carousel-1.jpeg", "/assets/carousel-2.JPG"]
 
 function HeroSection() {
   return (
     <>
-      <Flex flexDir={{ base: "column-reverse", lg: "row" }}>
+      <Flex flexDir={{ base: "column-reverse", lg: "row" }} minH={{lg: "90vh"}} justifyContent="center" alignItems="center">
         <Flex
           fontFamily="fonts.heading"
           alignSelf="center"
@@ -25,39 +28,31 @@ function HeroSection() {
             </Text>
           </Heading>
           <Text
-            fontSize={{ base: "md", lg: "4xl" }}
-            w={{ xl: "85%" }}
+            fontSize={{ base: "md", lg: "2xl" }}
+            w={{ xl: "65%" }}
             fontWeight="300"
             textAlign={{ base: "center", lg: "start" }}
           >
-            Equipping African Smallholder Farmers with Technology and Data for
+            Equipping African Farmers with Technology and Data for
             Sustainable Agriculture and Increased Crop Yields
           </Text>
           <Flex gap={4} flexDir={{ base: "column", lg: "row" }}>
-            <Button
-              color="white"
-              padding={8}
-              bg="primary.900"
-              rounded="full"
-              size="lg"
-              _hover={{ bg: "primary.900" }}
-            >
-              Request Demo
-            </Button>
-            <Button
-              color="white"
-              bg="secondary.900"
-              rounded="full"
-              padding={8}
-              size="lg"
-              _hover={{ bg: "secondary.900" }}
-            >
-              Book Farm Mapping
-            </Button>
+            <Link href="#contact">
+              <Button
+                color="white"
+                bg="secondary.900"
+                rounded="full"
+                padding={8}
+                size="lg"
+                _hover={{ bg: "primary.900" }}
+              >
+                Book Farm Mapping
+              </Button>
+            </Link>
           </Flex>
         </Flex>
-        <Box rounded="2xl" overflow="hidden" shadow="2xl" my={{base: "1rem", lg: 0}}>
-          <Img src="/assets/hero_img.png" />
+        <Box rounded="2xl" w={{lg: "75%"}} overflow="hidden" shadow="2xl" my={{base: "1rem", lg: 0}}>
+          <CarouselSlide imgSrcArray={imgSrc}/>
         </Box>
       </Flex>
     </>

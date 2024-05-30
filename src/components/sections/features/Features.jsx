@@ -32,20 +32,19 @@ const features = [
 function Features() {
   return (
     <>
-      <Box id="features">
-        <SectionHeader firstHeading="Our" secondHeading="Features" />
+      <Box id="features" py={20}>
+      <Text fontFamily="fonts.body" textAlign="center" fontWeight="bold" color="primary.900">Our Features</Text>
         <Text
-          w={{lg: "60%"}}
-          fontSize={{lg: "xl"}}
+          w={{lg: "65%"}}
+          fontSize={{lg: "3xl"}}
           mx="auto"
           fontFamily="fonts.body"
           textAlign="center"
+          fontWeight="700"
           mt={4}
         >
           Unlock the{" "}
-          <Text as="span" fontWeight="700">
             power of precision agriculture
-          </Text>{" "}
           with Agriguard's innovative features.
         </Text>
         <Flex gap={6} flexWrap="wrap" justifyContent="center" mt={4}>
