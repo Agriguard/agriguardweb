@@ -14,7 +14,7 @@ import SectionHeader from "../../shared/SectionHeader";
 function Contact() {
   return (
     <>
-      <Box id="contact">
+      <Box id="contact" py={20}>
         <SectionHeader firstHeading="Let's" secondHeading="Connect" />
         <Text
           w={{ lg: "60%" }}
@@ -22,7 +22,7 @@ function Contact() {
           mx="auto"
           fontFamily="fonts.body"
           textAlign="center"
-          mt={4}
+          my={8}
         >
           Got a question or interested in exploring partnership opportunities?
           Use the form below or send us a message on Whatsapp{" "}
@@ -30,7 +30,7 @@ function Contact() {
             +233 535 254 739{" "}
           </Text>
         </Text>
-        <Flex mt={8} gap={8} flexDir={{ base: "column", lg: "row" }}>
+        <Flex mt={12} gap={8} flexDir={{ base: "column", lg: "row" }}>
           <Flex
             fontFamily="fonts.heading"
             alignSelf="center"

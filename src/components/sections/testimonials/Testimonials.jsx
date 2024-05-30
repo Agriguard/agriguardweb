@@ -29,10 +29,25 @@ function Testimonials() {
     <>
       <Box>
         <Box width={{ lg: "50%" }} mx="auto">
-          <SectionHeader
-            firstHeading="Listen to what our"
-            secondHeading="customers say"
-          />
+        <Text
+          fontFamily="fonts.body"
+          textAlign="center"
+          fontWeight="bold"
+          color="primary.900"
+        >
+          Our Testimonials
+        </Text>
+        <Text
+          w={{ lg: "75%" }}
+          fontSize={{ lg: "3xl" }}
+          mx="auto"
+          fontFamily="fonts.body"
+          textAlign="center"
+          fontWeight="700"
+          mt={4}
+        >
+          Listen to what our customers say
+        </Text>
         </Box>
         <Flex
           gap={8}

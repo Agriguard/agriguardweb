@@ -17,11 +17,12 @@ function App() {
   return (
     <>
       <ResponsiveNavbar />
-      <Flex px={{ base: "1rem", lg: "5rem" }} flexDir="column" gap={32}>
+      <Flex px={{ base: "1rem", lg: "5rem" }} flexDir="column" gap={{base: 12, lg: 24}}>
         <HeroSection />
-        <Problem />
-        <Stats />
-        <SolutionSection />
+      </Flex>
+      <Problem />
+      <Flex px={{ base: "1rem", lg: "5rem" }} flexDir="column" gap={{base: 12, lg: 24}}>
+      <SolutionSection />
         <Features />
         <Pricing />
         <Testimonials />

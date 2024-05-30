@@ -18,6 +18,9 @@ const colors = {
   text: {
     primary: "#1E1E1E",
     secondary: "#525252",
+    tertiary: "#D3D3D3",
+    primaryWithOpacity: "#2FB95D08",
+    primaryWithLessOpacity: "#2FB95D10"
   },
   gradients: {
     customGradient:

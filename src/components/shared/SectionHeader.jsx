@@ -9,7 +9,7 @@ function SectionHeader({firstHeading, secondHeading}) {
         <Heading
           as="h2"
           color="primary.900"
-          fontSize={{ base: "3xl", lg: "6xl" }}
+          fontSize={{ base: "3xl", lg: "5xl" }}
           fontFamily="fonts.body"
         >
           {firstHeading}{" "}
