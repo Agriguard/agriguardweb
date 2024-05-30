@@ -55,7 +55,7 @@ const pricingPackages = [
 function Pricing() {
   return (
     <>
-      <Box fontFamily="fonts.body" id="pricing" py={20}>
+      <Box fontFamily="fonts.body" id="pricing" py={{base: 4, lg: 20}}>
         <Text
           fontFamily="fonts.body"
           textAlign="center"
@@ -66,7 +66,7 @@ function Pricing() {
         </Text>
         <Text
           w={{ lg: "65%" }}
-          fontSize={{ lg: "3xl" }}
+          fontSize={{ base: "2xl", lg: "3xl" }}
           mx="auto"
           fontFamily="fonts.body"
           textAlign="center"
@@ -102,7 +102,7 @@ const PricingPackage = ({
 }) => {
   return (
     <Box width={{ lg: "33.33%" }} p={{ lg: 4 }} mx="auto" position="relative" mt={16}>
-      <Img src={imgSrc} position="absolute" top={-6} left={8} width={20}/>
+      <Img src={imgSrc} position="absolute" top={{base: -8, lg:-6}} left={{base: 6, lg:8}} width={20}/>
       <Box
         background="text.primaryWithLessOpacity"
         color="secondary.900"
@@ -119,7 +119,7 @@ const PricingPackage = ({
         </Text>
         <Text fontSize={{ base: "xl", lg: "3xl" }}>
           {price}{" "}
-          <Text as="span" fontSize={{ lg: "md" }}>
+          <Text as="span" fontSize={{ base: "sm", lg: "md" }}>
             {priceDescription}
           </Text>
         </Text>
@@ -130,13 +130,13 @@ const PricingPackage = ({
         p={8}
         flexDir="column"
         gap={4}
-        h={{ lg: 400 }}
+        h={{ base: 350, lg: 400 }}
         roundedBottom="2xl"
       >
         {features.map((feature, index) => (
           <Flex gap={4} key={index} alignItems="center">
             <Img src="/assets/check-green.svg" />
-            <Text>{feature}</Text>
+            <Text fontSize={{base: "sm",}}>{feature}</Text>
           </Flex>
         ))}
         <Button

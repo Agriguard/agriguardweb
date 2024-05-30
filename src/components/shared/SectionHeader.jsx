@@ -2,21 +2,18 @@
 /* eslint-disable react/no-unescaped-entities */
 import { Box, Heading, Text } from "@chakra-ui/react";
 
-function SectionHeader({firstHeading, secondHeading}) {
+function SectionHeader({ firstHeading, secondHeading, title }) {
   return (
     <>
       <Box textAlign="center">
-        <Heading
-          as="h2"
-          color="primary.900"
-          fontSize={{ base: "3xl", lg: "5xl" }}
+        <Text
+          fontSize={{ base: "2xl", lg: "3xl" }}
           fontFamily="fonts.body"
+          fontWeight="700"
+          textAlign="center"
         >
-          {firstHeading}{" "}
-          <Text as="span" color="secondary.900">
-            {secondHeading}
-          </Text>
-        </Heading>
+          {title}
+        </Text>
       </Box>
     </>
   );

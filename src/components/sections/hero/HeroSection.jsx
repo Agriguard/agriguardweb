@@ -36,13 +36,13 @@ function HeroSection() {
             Equipping African Farmers with Technology and Data for
             Sustainable Agriculture and Increased Crop Yields
           </Text>
-          <Flex gap={4} flexDir={{ base: "column", lg: "row" }}>
+          <Flex gap={4} flexDir={{ base: "column", lg: "row" }} mx={{base: "auto", lg: "initial"}}>
             <Link href="#contact">
               <Button
                 color="white"
                 bg="secondary.900"
                 rounded="full"
-                padding={8}
+                padding={{lg: 8}}
                 size="lg"
                 _hover={{ bg: "primary.900" }}
               >
@@ -51,7 +51,7 @@ function HeroSection() {
             </Link>
           </Flex>
         </Flex>
-        <Box rounded="2xl" w={{lg: "75%"}} overflow="hidden" shadow="2xl" my={{base: "1rem", lg: 0}}>
+        <Box rounded={{lg:"2xl"}} w={{base: "100%", lg: "75%"}} overflow="hidden" shadow="2xl" my={{base: "1rem", lg: 0}}>
           <CarouselSlide imgSrcArray={imgSrc}/>
         </Box>
       </Flex>

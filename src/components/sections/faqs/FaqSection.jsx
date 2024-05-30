@@ -45,14 +45,15 @@ const faqDetails = [
 function FaqSection() {
   return (
     <>
-      <Box id="faqs" fontFamily="fonts.body" px={20}>
-        <Flex gap={8}>
+      <Box id="faqs" fontFamily="fonts.body" px={{base: 4, lg:20}}>
+        <Flex gap={8} display={{base: "block", lg: "flex"}}>
           <Box width={{ lg: "50%" }} me="auto">
             <Text
-              fontSize={{ lg: "3xl" }}
+              fontSize={{ base: "2xl", lg: "3xl" }}
               mx="auto"
               fontFamily="fonts.body"
               fontWeight="700"
+              textAlign={{base: "center", lg: "start"}}
               mt={4}
             >
               Find the answers you need!
@@ -68,7 +69,7 @@ function FaqSection() {
               ))}
             </Box>
           </Box>
-          <Box width="50%">
+          <Box width={{lg:"50%"}} mt={{base: 4, lg: 0}}>
             <Card
               direction={{ base: "column", sm: "row" }}
               overflow="hidden"

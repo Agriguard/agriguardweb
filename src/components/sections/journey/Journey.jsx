@@ -4,7 +4,7 @@ import { Box, Flex, Heading, Img, Text } from "@chakra-ui/react";
 function Journey() {
   return (
     <>
-      <Flex mt={28} py={20} flexDir={{ base: "column", lg: "row" }}>
+      <Flex mt={{base: 8, lg: 28}} py={{lg: 20}} flexDir={{ base: "column", lg: "row" }}>
         <Flex
           fontFamily="fonts.heading"
           alignSelf="center"
