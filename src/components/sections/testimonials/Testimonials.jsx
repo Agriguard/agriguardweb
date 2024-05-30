@@ -2,6 +2,8 @@
 import { Box, Flex, Img, Text } from "@chakra-ui/react";
 import SectionHeader from "../../shared/SectionHeader";
 import Star from "/assets/starIcon.png";
+import React from 'react'
+import ReactPlayer from 'react-player/youtube'
 
 const customerDetails = [
   {
@@ -24,10 +26,22 @@ const customerDetails = [
   },
 ];
 
+function VideoPlayer() {
+  return (
+    <ReactPlayer
+      url="<https://youtu.be/rcqJjxym9nE>"
+      width="100%"
+      height="500px"
+      controls
+    />
+  );
+}
+
 function Testimonials() {
   return (
     <>
       <Box>
+        <VideoPlayer/>
         <Box width={{ lg: "50%" }} mx="auto">
         <Text
           fontFamily="fonts.body"
