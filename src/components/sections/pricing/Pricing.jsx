@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/no-unescaped-entities */
-import { Box, Button, Flex, Img, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, Img, Text, Link } from "@chakra-ui/react";
 import SectionHeader from "../../shared/SectionHeader";
 
 const pricingPackages = [
@@ -17,7 +17,9 @@ const pricingPackages = [
     ],
     borderColor: "1px solid #2FB95D",
     bgColor: "white",
-    imgSrc: "assets/farm-coop-icon.svg"
+    imgSrc: "assets/farm-coop-icon.svg",
+    contactUrl: "#contact"
+
   },
   {
     name: "Farm Management",
@@ -32,7 +34,8 @@ const pricingPackages = [
       "Crop Advisory",
     ],
     bgColor: "primary.900",
-    imgSrc: "assets/farm-management-icon.svg"
+    imgSrc: "assets/farm-management-icon.svg", 
+    contactUrl: "#contact"
   },
   {
     name: "Enterprise",
@@ -48,7 +51,8 @@ const pricingPackages = [
     ],
     borderColor: "1px solid #2FB95D",
     bgColor: "white",
-    imgSrc: "assets/enterprise-icon.svg"
+    imgSrc: "assets/enterprise-icon.svg",
+    contactUrl: "#contact"
   },
 ];
 
@@ -98,7 +102,8 @@ const PricingPackage = ({
   buttonColor,
   borderColor,
   bgColor,
-  imgSrc
+  imgSrc,
+  contactUrl
 }) => {
   return (
     <Box width={{ lg: "33.33%" }} p={{ lg: 4 }} mx="auto" position="relative" mt={16}>
@@ -140,6 +145,8 @@ const PricingPackage = ({
           </Flex>
         ))}
         <Button
+          as={Link}
+          href={contactUrl}
           variant="outline"
           border={borderColor}
           backgroundColor={bgColor}
