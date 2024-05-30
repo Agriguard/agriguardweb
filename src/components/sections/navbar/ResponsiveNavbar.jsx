@@ -96,17 +96,17 @@ const MenuLinks = ({ isOpen }) => {
         <MenuItem to="#pricing">Pricing </MenuItem>
         <MenuItem to="#faqs">FAQs </MenuItem>
         <MenuItem to="#contact">Contact </MenuItem>
-        <MenuItem to="/signup">
+        <MenuItem to="#contact">
           <Button
             size="md"
-            rounded="md"
+            rounded="full"
             color={["primary.900", "white"]}
             bg={["white", "primary.900"]}
             _hover={{
               bg: "secondary.900",
             }}
           >
-            Sign Up
+            Request Demo
           </Button>
         </MenuItem>
       </Stack>

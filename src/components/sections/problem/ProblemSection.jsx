@@ -1,18 +1,20 @@
-import { Box, Text } from "@chakra-ui/react";
+import { Box, Flex, Text } from "@chakra-ui/react";
+import Stats from "./Stats";
 
 function Problem() {
   return (
     <>
-      <Box>
+      <Flex minH={{lg: "85vh"}} flexDir="column" justifyContent="center" alignItems="center" gap={12} px={20} bgColor="text.primaryWithOpacity">
         <Text
           color="secondary.900"
           textAlign="center"
           fontWeight="300"
-          fontSize={{base: "md", lg:"4xl"}}
+          fontSize={{base: "md", lg:"3xl"}}
           fontFamily="fonts.body"
+          mx={4}
         >
           <Text as="span" fontWeight="700">
-            70% of African Smallholder Farmers
+            70% of African Farmers
           </Text>{" "}
           face disrupted production cycles and a{" "}
           <Text as="span" fontWeight="700">
@@ -21,7 +23,8 @@ function Problem() {
           due to insufficient information, poor management and generalised data, impacting
           food security and farmer livelihood
         </Text>
-      </Box>
+        <Stats/>
+      </Flex>
     </>
   );
 }

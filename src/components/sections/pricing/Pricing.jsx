@@ -6,68 +6,81 @@ import SectionHeader from "../../shared/SectionHeader";
 const pricingPackages = [
   {
     name: "Farmer Coop",
-    price: 8.0,
-    priceDescription: "per year",
-    packageColor: "primary.900",
-    packageColorReverse: "primary.900",
+    price: "$8",
+    priceDescription: "per year (for cooperatives)",
     buttonColor: "primary.900",
     features: [
-      "Mobile Farm Mapping",
+      "Farm Mapping Up to 12 acres",
       "Daily Weather SMS (x365)",
       "Local language Voice Service",
       "Crop Advisory",
     ],
+    borderColor: "1px solid #2FB95D",
+    bgColor: "white",
+    imgSrc: "assets/farm-coop-icon.svg"
   },
   {
-    name: "Farm Mapping",
-    price: 4.0,
+    name: "Farm Management",
+    price: "$4",
     priceDescription: "per acre (per season)",
-    packageColor: "secondary.900",
-    packageColorReverse: "secondary.900",
-    buttonColor: "secondary.900",
+    buttonColor: "white",
     features: [
-      "Digital Map",
-      "GPS Coordinates",
-      "Area Calculation",
-      "Farm Management",
+      "Farm Mapping Up to 50 acres",
+      "Up to 200 Farm Segments",
+      "Budget and Expense Tracking",
+      "Task Management",
+      "Crop Advisory",
     ],
+    bgColor: "primary.900",
+    imgSrc: "assets/farm-management-icon.svg"
   },
   {
     name: "Enterprise",
-    price: 2400.0,
-    priceDescription: "per year",
-    packageColor: "primary.900",
-    packageColorReverse: "primary.900",
-    buttonColor: "secondary.900",
+    price: "Let's Talk!",
+    buttonColor: "primary.900",
     features: [
-      "Mobile Farm Mapping",
-      "SMS & Voice Service",
-      "Farmer Management",
-      "Dashboard & Analytics",
+      "Everything in Farm Management",
+      "Custom Farm Mapping",
+      "Up to 1,000 Farm Segments",
+      "Inventory Management",
+      "Training & Support",
+      "AI-Powered Risk Scoring"
     ],
+    borderColor: "1px solid #2FB95D",
+    bgColor: "white",
+    imgSrc: "assets/enterprise-icon.svg"
   },
 ];
 
 function Pricing() {
   return (
     <>
-      <Box fontFamily="fonts.body" id="pricing">
-        <SectionHeader firstHeading="Pricing" secondHeading="Packages" />
+      <Box fontFamily="fonts.body" id="pricing" py={20}>
         <Text
-          w={{lg: "60%"}}
-          fontSize={{lg: "xl"}}
+          fontFamily="fonts.body"
+          textAlign="center"
+          fontWeight="bold"
+          color="primary.900"
+        >
+          Our Pricing
+        </Text>
+        <Text
+          w={{ lg: "65%" }}
+          fontSize={{ lg: "3xl" }}
           mx="auto"
           fontFamily="fonts.body"
           textAlign="center"
+          fontWeight="700"
           mt={4}
         >
-          Choose the plan that{" "}
-          <Text as="span" fontWeight="700">
-            fits your farm best and start optimizing your yields{" "}
-          </Text>
-          today!
+          Choose the plan that fits your farm best and start optimizing your
+          yields today!
         </Text>
-        <Flex gap={4} flexDir={{base: "column", lg: "row"}}>
+        <Flex
+          flexDir={{ base: "column", lg: "row" }}
+          w={{ lg: "80%" }}
+          mx="auto"
+        >
           {pricingPackages.map((packageData, index) => (
             <PricingPackage key={index} {...packageData} />
           ))}
@@ -82,53 +95,63 @@ const PricingPackage = ({
   price,
   priceDescription,
   features,
-  packageColor,
-  packageColorReverse,
-  buttonColor
+  buttonColor,
+  borderColor,
+  bgColor,
+  imgSrc
 }) => {
   return (
-    <Box width={{lg: "33.33%"}} p={{lg: 4}}>
+    <Box width={{ lg: "33.33%" }} p={{ lg: 4 }} mx="auto" position="relative" mt={16}>
+      <Img src={imgSrc} position="absolute" top={-6} left={8} width={20}/>
       <Box
-        background={packageColor}
-        color="white"
-        p={4}
-        textAlign="center"
+        background="text.primaryWithLessOpacity"
+        color="secondary.900"
+        ps={8}
+        pt={8}
+        textAlign="start"
         roundedTop="2xl"
-        borderBottom="2px solid"
-        // textShadow="0 8px 24px black"
+        h={{ lg: 150 }}
+        borderBottom="1px solid #2FB95D"
+        // textShadow="0 2px 10px green"
       >
-        <Text fontWeight="700" fontSize="2xl">
+        <Text fontWeight="600" fontSize="2xl">
           {name}
         </Text>
-        <Text fontSize={{base: "2xl", lg: "6xl"}} fontWeight="700">
-          {price} USD
+        <Text fontSize={{ base: "xl", lg: "3xl" }}>
+          {price}{" "}
+          <Text as="span" fontSize={{ lg: "md" }}>
+            {priceDescription}
+          </Text>
         </Text>
-        <Text fontSize={{lg:"xl"}}>{priceDescription}</Text>
       </Box>
       <Flex
-        background={packageColorReverse}
-        color="white"
+        background="text.primaryWithLessOpacity"
+        color="secondary.900"
         p={8}
         flexDir="column"
         gap={4}
+        h={{ lg: 400 }}
         roundedBottom="2xl"
       >
         {features.map((feature, index) => (
-          <Flex gap={4} key={index} borderBottom="1px solid" pb={4}>
-            <Img src="/assets/check.png" />
+          <Flex gap={4} key={index} alignItems="center">
+            <Img src="/assets/check-green.svg" />
             <Text>{feature}</Text>
           </Flex>
         ))}
         <Button
-          backgroundColor="white"
-          size={{base: "md", lg:"lg"}}
+          variant="outline"
+          border={borderColor}
+          backgroundColor={bgColor}
+          size={{ base: "md", lg: "lg" }}
           fontSize="xl"
           rounded="full"
-          py={{lg: 8}}
-          mt={4}
+          py={{ lg: 4 }}
+          mt="auto"
+          _hover={{ backgroundColor: { bgColor } }}
           color={buttonColor}
         >
-          Contact Us
+          Contact Sales
         </Button>
       </Flex>
     </Box>
