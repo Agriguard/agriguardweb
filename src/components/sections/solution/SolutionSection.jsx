@@ -44,7 +44,7 @@ const steps = [
 function SolutionSection() {
   return (
     <>
-      <Box py={{ lg: 20 }}>
+      <Box py={{ base: 4, lg: 20 }}>
         <Text
           fontFamily="fonts.body"
           textAlign="center"

@@ -12,6 +12,7 @@ const outerBoxStyles = {
   fontWeight: "bold",
   fontSize: "20px",
   background: 'url("/assets/hackathon_press.png") repeat',
+  backgroundPosition: {base: "right", lg: "left"}
 };
 
 const innerBoxStyles = {

@@ -4,7 +4,7 @@ import { Box, Flex, Heading, Img, Text } from "@chakra-ui/react";
 function Journey() {
   return (
     <>
-      <Flex mt={{base: 8, lg: 28}} py={{lg: 20}} flexDir={{ base: "column", lg: "row" }}>
+      <Flex py={{ base: 4, lg: 20 }} flexDir={{ base: "column", lg: "row" }}>
         <Flex
           fontFamily="fonts.heading"
           alignSelf="center"
@@ -38,17 +38,7 @@ function Journey() {
             </Text>
             <Text>
               Fueled by this commitment, we harness advanced tech and data
-              analytics to tackle the pressing challenge of unreliable weather
-              data.{" "}
-            </Text>
-            <Text>
-              Our solution offers{" "}
-              <Text as="span" fontWeight="700">
-                farm management with hyperlocal, precise, and timely insights tailored to
-                each farm's unique needs,
-              </Text>{" "}
-              empowering farmers to manage their farms and make informed decisions and enhance their
-              production cycles.{" "}
+              analytics to tackle the pressing challenge of unreliable and insufficient farm information.{" "}
             </Text>
           </Flex>
         </Flex>

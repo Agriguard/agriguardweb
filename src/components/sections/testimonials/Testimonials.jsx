@@ -43,7 +43,7 @@ function VideoPlayer() {
 function Testimonials() {
   return (
     <>
-      <Box>
+      <Box py={{ base: 4, lg: 20 }}>
         <Box width={{ lg: "50%" }} mx="auto">
           <Text
             fontFamily="fonts.body"

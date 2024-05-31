@@ -45,7 +45,7 @@ const faqDetails = [
 function FaqSection() {
   return (
     <>
-      <Box id="faqs" fontFamily="fonts.body" px={{base: 4, lg:20}}>
+      <Box id="faqs" fontFamily="fonts.body" py={{base: 4, lg:20}}>
         <Flex gap={8} display={{base: "block", lg: "flex"}}>
           <Box width={{ lg: "50%" }} me="auto">
             <Text
@@ -54,12 +54,11 @@ function FaqSection() {
               fontFamily="fonts.body"
               fontWeight="700"
               textAlign={{base: "center", lg: "start"}}
-              mt={4}
             >
               Find the answers you need!
             </Text>
             <Box
-              mt={8}
+              mt={7}
               border="1px solid #2FB95D20"
               rounded="xl"
               overflow="hidden"
@@ -88,7 +87,7 @@ function FaqSection() {
                   </Heading>
 
                   <Text py="2">
-                    Get detailed and accurate maps of your farm.that help you
+                    Get detailed and accurate maps of your farm that help you
                     manage your land effectively. From field boundaries to soil
                     composition and crop distribution, our maps offer invaluable
                     insights to optimize your farming operations and increase
