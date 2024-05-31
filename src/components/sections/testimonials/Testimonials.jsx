@@ -44,7 +44,6 @@ function Testimonials() {
   return (
     <>
       <Box>
-        <VideoPlayer/>
         <Box width={{ lg: "50%" }} mx="auto">
           <Text
             fontFamily="fonts.body"
@@ -55,6 +54,9 @@ function Testimonials() {
             Our Testimonials
           </Text>
           <SectionHeader title="Listen to what our customers say" />
+        </Box>
+        <Box overflow="hidden" rounded="xl" my={{lg: 4}}>
+          <VideoPlayer/>
         </Box>
         <Box display={{ base: "block", lg: "none" }} mt={{ base: 4, lg: "none" }}>
           <Swiper
