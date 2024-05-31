@@ -27,7 +27,7 @@ const pricingPackages = [
     priceDescription: "per acre (per season)",
     buttonColor: "white",
     features: [
-      "Farm Mapping Up to 50 acres",
+      "Farm Mapping Up to 200 acres",
       "Up to 200 Farm Segments",
       "Budget and Expense Tracking",
       "Task Management",

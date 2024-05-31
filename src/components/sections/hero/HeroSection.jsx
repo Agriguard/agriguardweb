@@ -6,7 +6,7 @@ const imgSrc = ["/assets/carousel-3.JPG", "/assets/carousel-1.jpeg", "/assets/ca
 function HeroSection() {
   return (
     <>
-      <Flex flexDir={{ base: "column-reverse", lg: "row" }} minH={{lg: "90vh"}} justifyContent="center" alignItems="center">
+      <Flex flexDir={{ base: "column-reverse", lg: "row" }} minH={{lg: "100vh"}} mt={{base:16, lg: 0}} justifyContent="center" alignItems="center">
         <Flex
           fontFamily="fonts.heading"
           alignSelf="center"

@@ -11,7 +11,7 @@ const outerBoxStyles = {
   color: "white",
   fontWeight: "bold",
   fontSize: "20px",
-  background: 'url("/assets/hackathon_press.png") no-repeat',
+  background: 'url("/assets/hackathon_press.png") repeat',
 };
 
 const innerBoxStyles = {
@@ -40,7 +40,7 @@ function Press() {
         <Text fontSize={{base: "3xl", lg:"6xl"}} width={{lg: "75%"}}>
           Agriguard wins 2023 Ignitia Disaster Risk Mitigation Hackathon
         </Text>
-        <Link href="https://facebook.com">
+        <Link href="https://www.graphic.com.gh/news/general-news/ghana-news-agriguard-wins-2023-climate-tech-hackathon.html">
           <Button
             bg="primary.900"
             size={{base: "md", lg:"lg"}}

@@ -1,8 +1,7 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import "swiper/css/pagination";
-import { Autoplay, Pagination } from 'swiper/modules';
+import { Autoplay } from 'swiper/modules';
 import { Box, Img } from "@chakra-ui/react";
 
 export default function CarouselSlide({imgSrcArray}) {
@@ -10,16 +9,13 @@ export default function CarouselSlide({imgSrcArray}) {
     <Box>
       <Swiper
         spaceBetween={30}
-        pagination={{
-          clickable: true,
-        }}
         autoplay={{
           delay: 4500,
           disableOnInteraction: false,
         }}
         grabCursor= {true}
         className="mySwiper"
-        modules={[Autoplay, Pagination]}
+        modules={[Autoplay]}
       >
         {imgSrcArray.map((imgSrc, index) => (
           <SwiperSlide key={index}>
