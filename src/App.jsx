@@ -21,14 +21,14 @@ function App() {
         <HeroSection />
       </Flex>
       <Problem />
-      <Flex px={{ base: "1rem", lg: "5rem" }} flexDir="column" gap={{base: 12, lg: 24}}>
-      <SolutionSection />
+      <Flex px={{ base: "1rem", lg: "5rem" }} flexDir="column" gap={{base: 12, lg: 0}}>
+        <SolutionSection />
         <Features />
         <Pricing />
         <Testimonials />
       </Flex>
       <Press />
-      <Flex px={{ base: "1rem", lg: "5rem" }} flexDir="column" gap={32}>
+      <Flex px={{ base: "1rem", lg: "5rem" }} flexDir="column">
         <Journey />
         <FaqSection />
         <Contact />
