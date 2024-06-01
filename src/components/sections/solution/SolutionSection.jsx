@@ -62,11 +62,10 @@ function SolutionSection() {
             mt={4}
           >
             <Text as="span">
-              Our farm management system provides tailored insights to meet each
+              Our farm management software provides tools to manage farms with tailored insights to meet each
               farm's unique needs. With AI-powered production risk scores, we
               empower farmers and enterprises to assess potential risks, make
-              informed decisions, and enhance their production cycles
-              effectively.{" "}
+              informed decisions, and enhance productivity every production cycle.{" "}
             </Text>
           </Text>
         </Box>

@@ -10,7 +10,7 @@ const stats = [
   {
     stat: "100",
     unit: "$",
-    description: "average monthly salary for Ghanaian farmers",
+    description: "average monthly income for Ghanaian farmers",
   },
   {
     stat: "60",
