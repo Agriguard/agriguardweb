@@ -37,8 +37,8 @@ function Journey() {
               continent.
             </Text>
             <Text>
-              Fueled by this commitment, we harness advanced tech and data
-              analytics to tackle the pressing challenge of unreliable and insufficient farm information.{" "}
+              Fueled by this commitment, we harness advanced technology like AI and data
+              analytics to tackle the pressing challenges of unreliable and insufficient farm information.{" "}
             </Text>
           </Flex>
         </Flex>

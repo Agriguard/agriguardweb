@@ -21,10 +21,10 @@ function HeroSection() {
             color="secondary.900"
             textAlign={{ base: "center", lg: "start" }}
           >
-            De-risking Farmland,
+            De-risking Farmland with
             <Text as="span" color="primary.900">
               {" "}
-              Empowering Farmers
+              Precision Agricuture
             </Text>
           </Heading>
           <Text
@@ -33,7 +33,7 @@ function HeroSection() {
             fontWeight="300"
             textAlign={{ base: "center", lg: "start" }}
           >
-            Equipping African Farmers with Technology and Data for
+            Equipping African Farmers with Precision agricultural technology and Data for
             Sustainable Agriculture and Increased Crop Yields
           </Text>
           <Flex gap={4} flexDir={{ base: "column", lg: "row" }} mx={{base: "auto", lg: "initial"}}>
@@ -46,7 +46,7 @@ function HeroSection() {
                 size="lg"
                 _hover={{ bg: "primary.900" }}
               >
-                Book Farm Mapping
+                Book demo
               </Button>
             </Link>
           </Flex>

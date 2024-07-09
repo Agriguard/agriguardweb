@@ -5,7 +5,7 @@ import { RiTwitterXLine } from "react-icons/ri";
 const footerDetails = [
     {
         title: "AGRIGUARD",
-        description: "Agriguard is a climate technology startup dedicated to empowering agricultural stakeholders  across sub-Saharan Africa with farm mapping, tailored weather advisory and related agri-services.",
+        description: "Agriguard is a Agricultural technology startup dedicated to empowering agricultural stakeholders  across sub-Saharan Africa with Precision Agriculuture software, market intelligence and related agri-services.",
         icons: [
             SlSocialFacebook,
             SlSocialLinkedin,

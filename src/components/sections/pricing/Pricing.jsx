@@ -5,15 +5,15 @@ import SectionHeader from "../../shared/SectionHeader";
 
 const pricingPackages = [
   {
-    name: "Farmer Coop",
-    price: "$8",
-    priceDescription: "per year (for cooperatives)",
+    name: "Basic plan",
+    price: "$15",
+    priceDescription: "per season (for enterprises and individuals)",
     buttonColor: "primary.900",
     features: [
-      "Farm Mapping Up to 12 acres",
-      "Daily Weather SMS (x365)",
-      "Local language Voice Service",
-      "Crop Advisory",
+      "Unlimited number of farmers",
+      "1 farm per farmer",
+      "10 segments per farm",
+      "Farm management (crop and risk advisory, task management, ) ",
     ],
     borderColor: "1px solid #2FB95D",
     bgColor: "white",
@@ -22,32 +22,27 @@ const pricingPackages = [
 
   },
   {
-    name: "Farm Management",
-    price: "$4",
-    priceDescription: "per acre (per season)",
+    name: "Premium plan",
+    price: "$25",
+    priceDescription: "per season",
     buttonColor: "white",
     features: [
-      "Farm Mapping Up to 200 acres",
-      "Up to 200 Farm Segments",
-      "Budget and Expense Tracking",
-      "Task Management",
-      "Crop Advisory",
+      "Everything in basic plan ",
+      "Yield tracking",
+      "Realtime crop monitoring",
+      " 5 farms and 50 segments per farmer",
     ],
     bgColor: "primary.900",
     imgSrc: "assets/farm-management-icon.svg", 
     contactUrl: "#contact"
   },
   {
-    name: "Enterprise",
+    name: "Enterprise plan",
     price: "Let's Talk!",
     buttonColor: "primary.900",
     features: [
-      "Everything in Farm Management",
-      "Custom Farm Mapping",
-      "Up to 1,000 Farm Segments",
-      "Inventory Management",
-      "Training & Support",
-      "AI-Powered Risk Scoring"
+    
+      "Customized to your needs"
     ],
     borderColor: "1px solid #2FB95D",
     bgColor: "white",
@@ -77,7 +72,7 @@ function Pricing() {
           fontWeight="700"
           mt={4}
         >
-          Choose the plan that fits your farm best and start optimizing your
+          Choose the plan that fits your enterprise best and start optimizing your
           yields today!
         </Text>
         <Flex
