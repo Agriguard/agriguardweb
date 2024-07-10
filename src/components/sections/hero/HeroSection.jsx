@@ -1,12 +1,19 @@
-import { Box, Button, Flex, Heading, Img, Link, Text } from "@chakra-ui/react";
+// HeroSection.js
+import { Box, Button, Flex, Heading, Link, Text } from "@chakra-ui/react";
 import CarouselSlide from "../../shared/CarouselSlide";
 
-const imgSrc = ["/assets/carousel-3.JPG", "/assets/carousel-1.jpeg", "/assets/carousel-2.JPG"]
+const imgSrc = ["/assets/carousel-1.jpg", "/assets/carousel-3.jpg", "/assets/carousel-2.jpg"];
 
 function HeroSection() {
   return (
     <>
-      <Flex flexDir={{ base: "column-reverse", lg: "row" }} minH={{lg: "100vh"}} mt={{base:16, lg: 0}} justifyContent="center" alignItems="center">
+      <Flex
+        flexDir={{ base: "column-reverse", lg: "row" }}
+        minH={{ lg: "100vh" }}
+        mt={{ base: 16, lg: 0 }}
+        justifyContent="center"
+        alignItems="center"
+      >
         <Flex
           fontFamily="fonts.heading"
           alignSelf="center"
@@ -21,10 +28,10 @@ function HeroSection() {
             color="secondary.900"
             textAlign={{ base: "center", lg: "start" }}
           >
-            De-risking Farmland with
+            Data-Driven Farming, Smarter Yields
             <Text as="span" color="primary.900">
               {" "}
-              Precision Agricuture
+              , Traceable suppy chain
             </Text>
           </Heading>
           <Text
@@ -34,25 +41,31 @@ function HeroSection() {
             textAlign={{ base: "center", lg: "start" }}
           >
             Equipping African Farmers with Precision agricultural technology and Data for
-            Sustainable Agriculture and Increased Crop Yields
+             Increased Crop Yields  and Sustainable Agriculture 
           </Text>
-          <Flex gap={4} flexDir={{ base: "column", lg: "row" }} mx={{base: "auto", lg: "initial"}}>
+          <Flex gap={4} flexDir={{ base: "column", lg: "row" }} mx={{ base: "auto", lg: "initial" }}>
             <Link href="#contact">
               <Button
                 color="white"
                 bg="secondary.900"
                 rounded="full"
-                padding={{lg: 8}}
+                padding={{ lg: 8 }}
                 size="lg"
                 _hover={{ bg: "primary.900" }}
               >
-                Book demo
+                Download
               </Button>
             </Link>
           </Flex>
         </Flex>
-        <Box rounded={{lg:"2xl"}} w={{base: "100%", lg: "75%"}} overflow="hidden" shadow="2xl" my={{base: "1rem", lg: 0}}>
-          <CarouselSlide imgSrcArray={imgSrc}/>
+        <Box
+          rounded={{ lg: "2xl" }}
+          w={{ base: "90%", sm: "80%", md: "70%", lg: "60%" }}
+          overflow="hidden"
+          shadow="2xl"
+          my={{ base: "1rem", lg: 0 }}
+        >
+          <CarouselSlide imgSrcArray={imgSrc} />
         </Box>
       </Flex>
     </>

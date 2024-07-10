@@ -153,7 +153,7 @@ const PricingPackage = ({
           _hover={{ backgroundColor: { bgColor } }}
           color={buttonColor}
         >
-          Contact Sales
+          Download
         </Button>
       </Flex>
     </Box>

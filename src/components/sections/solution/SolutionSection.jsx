@@ -27,17 +27,17 @@ const steps = [
     title: "Get Updates",
     description:
       "Receive real-time insights for informed decisions by text messages or voice",
-    bgColor: "secondary.900",
-    color: "white",
-    shadow: "none",
+    bgColor: "white",
+    color: "secondary.900",
+    shadow: "2xl",
   },
   {
     number: "4",
     title: "Track Yield",
     description: "Monitor and optimize crop productivity effortlessly",
-    bgColor: "white",
-    color: "secondary.900",
-    shadow: "2xl",
+    bgColor: "secondary.900",
+    color: "white",
+    shadow: "2x1",
   },
 ];
 
@@ -51,10 +51,10 @@ function SolutionSection() {
           fontWeight="bold"
           color="primary.900"
         >
-          Our Solution Offers
+          What we offer
         </Text>
         <Box w={{ lg: "75%" }} mx="auto" mt={4}>
-          <SectionHeader title="Farm Management: Hyperlocal, Precise, and Timely Insights"/>
+          <SectionHeader title="Farm Like a Pro, Anytime, Anywhere"/>
           <Text
             fontSize={{ base: "sm", lg: "lg" }}
             fontFamily="fonts.body"
@@ -62,8 +62,8 @@ function SolutionSection() {
             mt={4}
           >
             <Text as="span">
-              Our farm Precision agricultural software provides tools to manage farms with tailored insights to meet each
-              farm's unique needs. With AI-powered production risk scores, we
+              Our Precision agricultural software provides tools to manage farms with tailored insights to meet each
+              farm's unique needs. With AI-powered advice and production risk scores, we
               empower farmers and enterprises to assess potential risks, make
               informed decisions, and enhance productivity every production cycle.{" "}
             </Text>

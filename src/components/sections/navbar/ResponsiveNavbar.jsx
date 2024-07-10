@@ -106,7 +106,7 @@ const MenuLinks = ({ isOpen }) => {
               bg: "secondary.900",
             }}
           >
-            Request Demo
+            Get software
           </Button>
         </MenuItem>
       </Stack>

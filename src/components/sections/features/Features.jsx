@@ -8,7 +8,7 @@ import SectionHeader from "../../shared/SectionHeader";
 const features = [
   {
     iconPath: "/assets/survey.png",
-    title: "Farm Mapping & Land Surveys",
+    title: "Farm Mapping ",
     description:
       "Easily map your farm's land to gain valuable insights into crop health, growth patterns, and potential risks.",
   },

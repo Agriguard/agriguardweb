@@ -83,7 +83,7 @@ function FaqSection() {
                     fontFamily="fonts.body"
                     color="primary.900"
                   >
-                    Book Farm Mapping
+                    Take your farm digital
                   </Heading>
 
                   <Text py="2">
@@ -104,7 +104,7 @@ function FaqSection() {
                         rounded="full"
                         _hover={{ bgColor: "primary.900" }}
                       >
-                        Book Now
+                       Map farms
                       </Button>
                   </Link>
                 </CardFooter>
