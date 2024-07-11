@@ -7,7 +7,7 @@ const pricingPackages = [
   {
     name: "Basic plan",
     price: "$15",
-    priceDescription: "per season (for enterprises and individuals)",
+    priceDescription: "per season",
     buttonColor: "primary.900",
     features: [
       "Unlimited number of farmers",

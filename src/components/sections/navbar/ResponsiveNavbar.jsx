@@ -106,7 +106,7 @@ const MenuLinks = ({ isOpen }) => {
               bg: "secondary.900",
             }}
           >
-            Get software
+            Manage farm
           </Button>
         </MenuItem>
       </Stack>
