@@ -1,7 +1,7 @@
 import { Box, Button, Flex, Heading, Img, Link, Text } from "@chakra-ui/react";
 import CarouselSlide from "../../shared/CarouselSlide";
 
-const imgSrc = ["/assets/carousel-3.JPG", "/assets/carousel-1.jpeg", "/assets/carousel-2.JPG"]
+const imgSrc = ["/assets/carousel-3.JPG", "/assets/carousel-5.jpeg", "/assets/carousel-2.JPG"]
 
 function HeroSection() {
   return (
