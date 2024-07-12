@@ -26,6 +26,7 @@ const footerDetails = [
           "#features",
           "#pricing",
           "#faqs",
+          "#news",
           "#contact",
           "https://docs.google.com/document/d/1rP84jXylffAvVQAA-VwLAR5lkJSSC35_1QD0YUffJj4/edit?usp=sharing"  
       ]
