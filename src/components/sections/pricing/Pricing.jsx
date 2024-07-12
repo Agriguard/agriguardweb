@@ -5,15 +5,16 @@ import SectionHeader from "../../shared/SectionHeader";
 
 const pricingPackages = [
   {
-    name: "Farmer Coop",
-    price: "$8",
-    priceDescription: "per year (for cooperatives)",
+    name: "Basic plan",
+    price: "$10",
+    priceDescription: "per season ",
     buttonColor: "primary.900",
     features: [
-      "Farm Mapping Up to 12 acres",
-      "Daily Weather SMS (x365)",
-      "Local language Voice Service",
-      "Crop Advisory",
+      "unlimited number of farmers",
+      "1 farm per farmer",
+      "10 segments per farm",
+      "Crop and risk advisory",
+      "Task management",
     ],
     borderColor: "1px solid #2FB95D",
     bgColor: "white",
@@ -22,16 +23,16 @@ const pricingPackages = [
 
   },
   {
-    name: "Farm Management",
-    price: "$4",
-    priceDescription: "per acre (per season)",
+    name: "Premuim plan",
+    price: "$20",
+    priceDescription: " per season",
     buttonColor: "white",
     features: [
-      "Farm Mapping Up to 200 acres",
-      "Up to 200 Farm Segments",
-      "Budget and Expense Tracking",
-      "Task Management",
-      "Crop Advisory",
+      "Everything in basic plan",
+      "Yield tracking",
+      "Realtime crop monitoring",
+      "5 farms and 50 segments per farmer",
+  
     ],
     bgColor: "primary.900",
     imgSrc: "assets/farm-management-icon.svg", 
@@ -42,12 +43,9 @@ const pricingPackages = [
     price: "Let's Talk!",
     buttonColor: "primary.900",
     features: [
-      "Everything in Farm Management",
-      "Custom Farm Mapping",
-      "Up to 1,000 Farm Segments",
-      "Inventory Management",
-      "Training & Support",
-      "AI-Powered Risk Scoring"
+      "Customized to your needs",
+      "Regular farm visits by experts",
+      "24/7 support"
     ],
     borderColor: "1px solid #2FB95D",
     bgColor: "white",
@@ -158,7 +156,7 @@ const PricingPackage = ({
           _hover={{ backgroundColor: { bgColor } }}
           color={buttonColor}
         >
-          Contact Sales
+          Download
         </Button>
       </Flex>
     </Box>

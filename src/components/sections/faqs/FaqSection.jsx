@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import {
   Accordion,
   AccordionButton,
@@ -12,12 +11,11 @@ import {
   CardFooter,
   Flex,
   Heading,
-  Img,
+  Image,
   Link,
   Stack,
   Text,
 } from "@chakra-ui/react";
-import SectionHeader from "../../shared/SectionHeader";
 
 const faqDetails = [
   {
@@ -42,107 +40,90 @@ const faqDetails = [
   },
 ];
 
+const playStoreIconSrc = "/assets/playstore.png";
+const playStoreLink = "https://play.google.com/store/apps/details?id=com.agriguard.mobile"; 
+
 function FaqSection() {
   return (
-    <>
-      <Box id="faqs" fontFamily="fonts.body" py={{base: 4, lg:20}}>
-        <Flex gap={8} display={{base: "block", lg: "flex"}}>
-          <Box width={{ lg: "50%" }} me="auto">
-            <Text
-              fontSize={{ base: "2xl", lg: "3xl" }}
-              mx="auto"
-              fontFamily="fonts.body"
-              fontWeight="700"
-              textAlign={{base: "center", lg: "start"}}
-            >
-              Find the answers you need!
-            </Text>
-            <Box
-              mt={7}
-              border="1px solid #2FB95D20"
-              rounded="xl"
-              overflow="hidden"
-            >
+    <Box id="faqs" fontFamily="fonts.body" py={{ base: 4, lg: 20 }}>
+      <Flex gap={8} display={{ base: "block", lg: "flex" }}>
+        {/* FAQs */}
+        <Box width={{ lg: "50%" }} me="auto">
+          <Text
+            fontSize={{ base: "2xl", lg: "3xl" }}
+            mx="auto"
+            fontFamily="fonts.body"
+            fontWeight="700"
+            textAlign={{ base: "center", lg: "start" }}
+          >
+            Find the answers you need!
+          </Text>
+
+          <Box mt={7} border="1px solid #2FB95D20" rounded="xl" overflow="hidden">
+            <Accordion allowToggle>
               {faqDetails.map((detail, index) => (
-                <FaqCard key={index} {...detail} />
+                <AccordionItem key={index}>
+                  <AccordionButton _hover={{ bgColor: "text.primaryWithLessOpacity" }}>
+                    <Box
+                      as="span"
+                      flex="1"
+                      textAlign="left"
+                      fontWeight={700}
+                      color="secondary.900"
+                    >
+                      {detail.question}
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                  <AccordionPanel pb={4}>{detail.answer}</AccordionPanel>
+                </AccordionItem>
               ))}
-            </Box>
+            </Accordion>
           </Box>
-          <Box width={{lg:"50%"}} mt={{base: 4, lg: 0}}>
-            <Card
-              direction={{ base: "column", sm: "row" }}
-              overflow="hidden"
-              bgColor="text.primaryWithOpacity"
-              ms="auto"
-            >
-              <Stack>
-                <CardBody>
-                  <Heading
-                    as="h6"
-                    size="md"
-                    fontFamily="fonts.body"
-                    color="primary.900"
+        </Box>
+
+        {/* Card with "Get it on Playstore" Button */}
+        <Box width={{ lg: "50%" }} mt={{ base: 4, lg: 0 }}>
+          <Card overflow="hidden" bgColor="text.primaryWithOpacity" ms="auto">
+            <Stack>
+              <CardBody>
+                <Heading as="h6" size="md" fontFamily="fonts.body" color="primary.900">
+                  Digitize your farmland
+                </Heading>
+
+                <Text py="2">
+                  Get detailed and accurate maps of your farm that help you
+                  manage your land effectively. From field boundaries to soil
+                  composition and crop distribution, our maps offer invaluable
+                  insights to optimize your farming operations and increase
+                  productivity.
+                </Text>
+              </CardBody>
+
+              {/* Play Store Button */}
+              <CardFooter>
+                <Link href={playStoreLink} isExternal>
+                  <Button
+                    color="white"
+                    bg="secondary.900"
+                    rounded="full"
+                    px={10}
+                    py={6}
+                    size="lg"
+                    _hover={{ bg: "primary.900" }}
+                    leftIcon={<Image src={playStoreIconSrc} boxSize="24px" />}
                   >
-                    Book Farm Mapping
-                  </Heading>
-
-                  <Text py="2">
-                    Get detailed and accurate maps of your farm that help you
-                    manage your land effectively. From field boundaries to soil
-                    composition and crop distribution, our maps offer invaluable
-                    insights to optimize your farming operations and increase
-                    productivity.
-                  </Text>
-                </CardBody>
-
-                <CardFooter>
-                  <Link href="#contact">
-                      <Button
-                        variant="solid"
-                        bgColor="secondary.900"
-                        color="white"
-                        rounded="full"
-                        _hover={{ bgColor: "primary.900" }}
-                      >
-                        Book Now
-                      </Button>
-                  </Link>
-                </CardFooter>
-              </Stack>
-            </Card>
-          </Box>
-        </Flex>
-      </Box>
-    </>
+                    Get it on Playstore
+                  </Button>
+                </Link>
+              </CardFooter>
+            </Stack>
+          </Card>
+        </Box>
+      </Flex>
+    </Box>
   );
 }
-
-const FaqCard = ({ question, answer }) => {
-  return (
-    <>
-      <Accordion allowToggle>
-        <AccordionItem>
-          <h2>
-            <AccordionButton
-              _hover={{ bgColor: "text.primaryWithLessOpacity" }}
-            >
-              <Box
-                as="span"
-                flex="1"
-                textAlign="left"
-                fontWeight={700}
-                color="secondary.900"
-              >
-                {question}
-              </Box>
-              <AccordionIcon />
-            </AccordionButton>
-          </h2>
-          <AccordionPanel pb={4}>{answer}</AccordionPanel>
-        </AccordionItem>
-      </Accordion>
-    </>
-  );
-};
-
+ 
 export default FaqSection;
+
