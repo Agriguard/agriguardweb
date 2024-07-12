@@ -43,7 +43,7 @@ function Journey() {
           </Flex>
         </Flex>
         <Box rounded="2xl" overflow="hidden" shadow="2xl" mt={{base: 8, lg: 0}}>
-          <Img src="/assets/carousel-1.jpeg" w={800}/>
+          <Img src="/assets/carousel-4.jpg" w={800}/>
         </Box>
       </Flex>
     </>

@@ -96,6 +96,7 @@ const MenuLinks = ({ isOpen }) => {
         <MenuItem to="#pricing">Pricing </MenuItem>
         <MenuItem to="#faqs">FAQs </MenuItem>
         <MenuItem to="#contact">Contact </MenuItem>
+        <MenuItem to="#contact">Privacy policy </MenuItem>
         <MenuItem to="#contact">
           <Button
             size="md"
@@ -106,7 +107,7 @@ const MenuLinks = ({ isOpen }) => {
               bg: "secondary.900",
             }}
           >
-            Request Demo
+            Manage farm
           </Button>
         </MenuItem>
       </Stack>
