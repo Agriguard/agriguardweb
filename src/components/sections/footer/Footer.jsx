@@ -19,14 +19,15 @@ const footerDetails = [
     },
     {
         title: "PAGES",
-        pages: ["Home", "About", "Features", "Pricing", "FAQs", "News", "Contact"],
+        pages: ["Home", "About", "Features", "Pricing", "FAQs", "News", "Contact", "Privacy Policy"],
         href: [
           "/",
           "#about",
           "#features",
           "#pricing",
           "#faqs",
-          "#contact"
+          "#contact",
+          "https://docs.google.com/document/d/1rP84jXylffAvVQAA-VwLAR5lkJSSC35_1QD0YUffJj4/edit?usp=sharing"  
       ]
     },
     {
