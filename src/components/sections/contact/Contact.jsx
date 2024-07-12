@@ -128,7 +128,7 @@ function Contact() {
               color="white"
               _hover={{ bg: "secondary.900" }}
             >
-              Talk to a farm manager
+              Get Started
             </Button>
           </Flex>
         </Flex>

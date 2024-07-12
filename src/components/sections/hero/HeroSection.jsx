@@ -1,23 +1,12 @@
-import { Box, Button, Flex, Heading, Image, Link, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, Heading, Img, Link, Text } from "@chakra-ui/react";
 import CarouselSlide from "../../shared/CarouselSlide";
 
-const imgSrc = ["/assets/carousel-1.jpg", "/assets/carousel-2.jpg", "/assets/carousel-3.jpg"];
-const phoneFrameSrc = "/assets/Phoneframe.jpg";
-const playStoreIconSrc = "/assets/playstore.png";
+const imgSrc = ["/assets/carousel-3.JPG", "/assets/carousel-5.JPG", "/assets/carousel-2.JPG"]
 
 function HeroSection() {
-  const playStoreLink = "https://play.google.com/store/apps/details?id=com.agriguard.mobile"; 
-
   return (
     <>
-      <Flex
-        flexDir={{ base: "column-reverse", lg: "row" }}
-        minH={{ lg: "100vh" }}
-        mt={{ base: 16, lg: 0 }}
-        justifyContent="center"
-        alignItems="center"
-      >
-        {/* Text Content */}
+      <Flex flexDir={{ base: "column-reverse", lg: "row" }} minH={{lg: "100vh"}} mt={{base:16, lg: 0}} justifyContent="center" alignItems="center">
         <Flex
           fontFamily="fonts.heading"
           alignSelf="center"
@@ -32,7 +21,11 @@ function HeroSection() {
             color="secondary.900"
             textAlign={{ base: "center", lg: "start" }}
           >
-            Data-Driven Farming, Higher Yields, Traceable supply chain 
+            De-risking Farmland,
+            <Text as="span" color="primary.900">
+              {" "}
+              Empowering Farmers
+            </Text>
           </Heading>
           <Text
             fontSize={{ base: "md", lg: "2xl" }}
@@ -40,58 +33,26 @@ function HeroSection() {
             fontWeight="300"
             textAlign={{ base: "center", lg: "start" }}
           >
-            Equipping African Farmers with Precision agricultural technology and Data for
-            Increased Crop Yields and Sustainable Agriculture
+            Equipping African Farmers with Technology and Data for
+            Sustainable Agriculture and Increased Crop Yields
           </Text>
-          <Flex gap={4} flexDir={{ base: "column", lg: "row" }} mx={{ base: "auto", lg: "initial" }}>
-            <Link href={playStoreLink} isExternal>
+          <Flex gap={4} flexDir={{ base: "column", lg: "row" }} mx={{base: "auto", lg: "initial"}}>
+            <Link href="#contact">
               <Button
                 color="white"
                 bg="secondary.900"
                 rounded="full"
-                px={10}
-                py={6}
+                padding={{lg: 8}}
                 size="lg"
                 _hover={{ bg: "primary.900" }}
-                leftIcon={<Image src={playStoreIconSrc} boxSize="24px" />}
               >
-                Get it on Playstore 
+                Book Farm Mapping
               </Button>
             </Link>
           </Flex>
         </Flex>
-
-        {/* Phone Frame and Carousel with Reduced Height */}
-        <Box
-          position="relative"
-          w={{ base: "90%", sm: "80%", md: "70%", lg: "45%" }} 
-          aspectRatio={{ base: "9/8", lg: "9/9.9" }} 
-          overflow="hidden"
-          my={{ base: "1rem", lg: 0 }}
-          borderRadius="2xl"
-        >
-          <Image
-            src={phoneFrameSrc}
-            alt="Phone Frame"
-            w="90%"
-            h="auto" 
-            position="relative"
-            opacity="0.8"
-            borderRadius="2xl"
-          />
-
-          {/* Carousel Content Container */}
-          <Box
-            position="absolute"
-            top="0"
-            left="0"
-            right="0"
-            bottom="0"
-            overflow="hidden"
-            borderRadius="2xl"
-          >
-            <CarouselSlide imgSrcArray={imgSrc} objectFit="contain" />
-          </Box>
+        <Box rounded={{lg:"2xl"}} w={{base: "100%", lg: "75%"}} overflow="hidden" shadow="2xl" my={{base: "1rem", lg: 0}}>
+          <CarouselSlide imgSrcArray={imgSrc}/>
         </Box>
       </Flex>
     </>
