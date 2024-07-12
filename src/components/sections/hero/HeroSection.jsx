@@ -30,7 +30,7 @@ function HeroSection() {
             color="secondary.900"
             textAlign={{ base: "center", lg: "start" }}
           >
-            Data-Driven Farming, Smarter Yields, Traceable supply chain 
+            Data-Driven Farming, Higher Yields, Traceable supply chain 
           </Heading>
           <Text
             fontSize={{ base: "md", lg: "2xl" }}
@@ -47,32 +47,32 @@ function HeroSection() {
                 color="white"
                 bg="secondary.900"
                 rounded="full"
-                padding={{ lg: 8 }}
+                px={10} // Increased horizontal padding
+                py={6} // Increased vertical padding 
                 size="lg"
                 _hover={{ bg: "primary.900" }}
                 leftIcon={<Image src={playStoreIconSrc} boxSize="24px" />}
               >
-                Download
+                Get it on Playstore 
               </Button>
             </Link>
           </Flex>
         </Flex>
 
-        {/* Phone Frame with Rounded Edges and Carousel */}
+        {/* Phone Frame and Carousel with Reduced Height */}
         <Box
           position="relative"
-          w={{ base: "90%", sm: "80%", md: "70%", lg: "45%" }}
-          aspectRatio={{ base: "9/16", lg: "9/19.8" }}
+          w={{ base: "90%", sm: "80%", md: "70%", lg: "45%" }} // Maintain original width
+          aspectRatio={{ base: "9/8", lg: "9/9.9" }} // Adjust aspect ratio for half height
           overflow="hidden"
-          shadow="2xl"
           my={{ base: "1rem", lg: 0 }}
           borderRadius="2xl"
         >
           <Image
             src={phoneFrameSrc}
             alt="Phone Frame"
-            w="100%"
-            h="auto"
+            w="90%"
+            h="auto" // Let height adjust automatically
             position="relative"
             opacity="0.8"
             borderRadius="2xl"
