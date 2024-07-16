@@ -26,7 +26,7 @@ const steps = [
     number: "3",
     title: "Get Updates",
     description:
-      "Receive real-time insights for informed decisions by text messages or voice",
+      "Receive real-time insights for informed decisions in our app",
     bgColor: "secondary.900",
     color: "white",
     shadow: "none",
