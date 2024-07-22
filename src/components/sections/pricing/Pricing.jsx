@@ -6,14 +6,14 @@ import SectionHeader from "../../shared/SectionHeader";
 const pricingPackages = [
   {
     name: "Basic plan",
-    price: "$10",
-    priceDescription: "per season ",
+    price: "$25 per month",
+    priceDescription: "1 month free trial ",
     buttonColor: "primary.900",
     features: [
-      "unlimited number of farmers",
+      "Unlimited number of farmers",
       "1 farm per farmer",
       "10 segments per farm",
-      "Crop and risk advisory",
+      "Actionable crop and risk advisory",
       "Task management",
     ],
     borderColor: "1px solid #2FB95D",
@@ -24,14 +24,16 @@ const pricingPackages = [
   },
   {
     name: "Premuim plan",
-    price: "$20",
-    priceDescription: " per season",
+    price: "$75 per month",
+    priceDescription: "2 month free trial",
     buttonColor: "white",
     features: [
       "Everything in basic plan",
       "Yield tracking",
       "Realtime crop monitoring",
-      "5 farms and 50 segments per farmer",
+      "5 farms and 50 segments per farmer", 
+      "Admin dashboard and Agriguard Manager",
+      
   
     ],
     bgColor: "primary.900",
