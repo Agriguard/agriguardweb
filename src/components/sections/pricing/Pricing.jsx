@@ -5,15 +5,17 @@ import SectionHeader from "../../shared/SectionHeader";
 
 const pricingPackages = [
   {
-    name: "Farmer Coop",
-    price: "$8",
-    priceDescription: "per year (for cooperatives)",
+    name: "Basic plan",
+    price: "$25 per month",
+
+    priceDescription: "1 month free trial",
     buttonColor: "primary.900",
     features: [
-      "Farm Mapping Up to 12 acres",
-      "Daily Weather SMS (x365)",
-      "Local language Voice Service",
-      "Crop Advisory",
+      "Unlimited number of farmers",
+      "1 farm per farmer",
+      "10 segments per farm",
+      "Actionable crop and risk advisory",
+      "Task management",
     ],
     borderColor: "1px solid #2FB95D",
     bgColor: "white",
@@ -22,19 +24,21 @@ const pricingPackages = [
 
   },
   {
-    name: "Farm Management",
-    price: "$4",
-    priceDescription: "per acre (per season)",
+    name: "Premuim plan",
+    price: "$75 per month",
+    priceDescription: "2 months free trial",
     buttonColor: "white",
     features: [
-      "Farm Mapping Up to 200 acres",
-      "Up to 200 Farm Segments",
-      "Budget and Expense Tracking",
-      "Task Management",
-      "Crop Advisory",
+      "Everything in basic plan",
+      "Yield tracking",
+      "Realtime crop monitoring",
+      "5 farms and 50 segments per farmer",
+      "Admin dashboard and Agriguard Manager",
+
+
     ],
     bgColor: "primary.900",
-    imgSrc: "assets/farm-management-icon.svg", 
+    imgSrc: "assets/farm-management-icon.svg",
     contactUrl: "#contact"
   },
   {
@@ -59,7 +63,7 @@ const pricingPackages = [
 function Pricing() {
   return (
     <>
-      <Box fontFamily="fonts.body" id="pricing" py={{base: 4, lg: 20}}>
+      <Box fontFamily="fonts.body" id="pricing" py={{ base: 4, lg: 20 }}>
         <Text
           fontFamily="fonts.body"
           textAlign="center"
@@ -107,7 +111,7 @@ const PricingPackage = ({
 }) => {
   return (
     <Box width={{ lg: "33.33%" }} p={{ lg: 4 }} mx="auto" position="relative" mt={16}>
-      <Img src={imgSrc} position="absolute" top={{base: -8, lg:-6}} left={{base: 6, lg:8}} width={20}/>
+      <Img src={imgSrc} position="absolute" top={{ base: -8, lg: -6 }} left={{ base: 6, lg: 8 }} width={20} />
       <Box
         background="text.primaryWithLessOpacity"
         color="secondary.900"
@@ -117,16 +121,16 @@ const PricingPackage = ({
         roundedTop="2xl"
         h={{ lg: 150 }}
         borderBottom="1px solid #2FB95D"
-        // textShadow="0 2px 10px green"
+      // textShadow="0 2px 10px green"
       >
         <Text fontWeight="600" fontSize="2xl">
           {name}
         </Text>
         <Text fontSize={{ base: "xl", lg: "3xl" }}>
           {price}{" "}
-          <Text as="span" fontSize={{ base: "sm", lg: "md" }}>
-            {priceDescription}
-          </Text>
+        </Text>
+        <Text fontSize={{ base: "sm", lg: "md" }}>
+          {priceDescription}
         </Text>
       </Box>
       <Flex
@@ -141,7 +145,7 @@ const PricingPackage = ({
         {features.map((feature, index) => (
           <Flex gap={4} key={index} alignItems="center">
             <Img src="/assets/check-green.svg" />
-            <Text fontSize={{base: "sm",}}>{feature}</Text>
+            <Text fontSize={{ base: "sm", }}>{feature}</Text>
           </Flex>
         ))}
         <Button

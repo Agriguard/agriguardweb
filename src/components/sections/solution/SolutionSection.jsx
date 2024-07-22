@@ -26,10 +26,10 @@ const steps = [
     number: "3",
     title: "Get Updates",
     description:
-      "Receive real-time insights for informed decisions in our app",
-    bgColor: "secondary.900",
-    color: "white",
-    shadow: "none",
+      "Receive real-time insights for informed decisions ",
+    bgColor: "white",
+    color: "secondary.900",
+    shadow: "2xl",
   },
   {
     number: "4",
@@ -54,7 +54,7 @@ function SolutionSection() {
           Our Solution Offers
         </Text>
         <Box w={{ lg: "75%" }} mx="auto" mt={4}>
-          <SectionHeader title="Farm Management: Hyperlocal, Precise, and Timely Insights"/>
+          <SectionHeader title="Farm and Sell Like a Pro, Anytime, Anywhere"/>
           <Text
             fontSize={{ base: "sm", lg: "lg" }}
             fontFamily="fonts.body"
