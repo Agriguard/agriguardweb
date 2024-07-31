@@ -143,9 +143,9 @@ export default function MarketAccess() {
                 <span>Price: {farm.price} cedis</span>
               </CardContent>
               <CardFooter className="flex justify-between">
-                <Button variant="outline">Bid</Button>
+  
                 <AlertDialog>
-                  <AlertDialogTrigger>Buy Now</AlertDialogTrigger>
+                  <AlertDialogTrigger>Place Order</AlertDialogTrigger>
                   <AlertDialogContent>
                     <AlertDialogHeader>
                       <AlertDialogTitle>
@@ -193,10 +193,9 @@ export default function MarketAccess() {
             <span>Price: 3700 USD</span>
           </CardContent>
           <CardFooter className="flex justify-between">
-            <Button variant="outline">Bid</Button>
             <AlertDialog>
               <AlertDialogTrigger asChild>
-                <Button>Buy Now</Button>
+                <Button>Place Order</Button>
               </AlertDialogTrigger>
               <AlertDialogContent>
                 <AlertDialogHeader>
@@ -239,8 +238,7 @@ export default function MarketAccess() {
             <span>Price: 1800 USD</span>
           </CardContent>
           <CardFooter className="flex justify-between">
-            <Button variant="outline">Bid</Button>
-            <Button>Buy Now</Button>
+            <Button>Place Order</Button>
           </CardFooter>
         </Card>
         <Card className="mb-4">
@@ -267,8 +265,7 @@ export default function MarketAccess() {
             <span>Price: 1500 USD</span><br />
           </CardContent>
           <CardFooter className="flex justify-between">
-            <Button variant="outline">Bid</Button>
-            <Button>Buy Now</Button>
+            <Button>Place Order</Button>
           </CardFooter>
         </Card>
       </div>
