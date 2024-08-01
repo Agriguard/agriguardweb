@@ -4,13 +4,25 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { usePathname } from "next/navigation"; // Import usePathname
+import { usePathname } from "next/navigation";
 
 export default function NavigationBar() {
   const [isOpen, setIsOpen] = useState(false);
-  const pathname = usePathname(); // Get the current route
+  const pathname = usePathname();
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [userName, setUserName] = useState("");
 
   useEffect(() => {
+    // Check if the user is authenticated by looking for the user data in localStorage
+    const userPhone = localStorage.getItem("user_phone");
+    const userEmail = localStorage.getItem("user_email");
+    const firstName = localStorage.getItem("first_name");
+
+    if (userPhone || userEmail || firstName) {
+      setIsAuthenticated(true);
+      setUserName(firstName || userEmail || "User");
+    }
+
     if (isOpen) {
       document.body.classList.add("overflow-hidden");
     } else {
@@ -21,6 +33,41 @@ export default function NavigationBar() {
       document.body.classList.remove("overflow-hidden");
     };
   }, [isOpen]);
+
+  const renderNavLinks = () => (
+    <div className="text-sm flex md:flex-row flex-col items-center justify-center gap-4">
+      <a
+        href="/"
+        className="block md:inline-block md:ml-5 text-center text-[#00000080] dark:text-white font-[500]"
+      >
+        Home
+      </a>
+      <a
+        href="#"
+        className="block md:inline-block md:mt-0 text-center text-[#00000080] dark:text-white font-[500]"
+      >
+        About Us
+      </a>
+      <a
+        href="#"
+        className="block md:inline-block text-center text-[#00000080] dark:text-white font-[500]"
+      >
+        Features
+      </a>
+      <a
+        href="#"
+        className="block md:inline-block text-center text-[#00000080] dark:text-white font-[500]"
+      >
+        Pricing
+      </a>
+      <a
+        href="#"
+        className="block md:inline-block text-center text-[#00000080] dark:text-white font-[500]"
+      >
+        FAQs
+      </a>
+    </div>
+  );
 
   return (
     <nav className="fixed top-0 left-0 right-0 bg-[#ffffffb2] backdrop-blur-xl md:px-4 border-b border-b-[#EDEDED] z-50">
@@ -64,54 +111,36 @@ export default function NavigationBar() {
             isOpen ? "block min-h-screen md:min-h-0" : "hidden max-h-none"
           }`}
         >
-          <div className="text-sm flex md:flex-row flex-col items-center justify-center gap-4">
-            <a
-              href="/"
-              className="block md:inline-block md:ml-5 text-center text-[#00000080] dark:text-white font-[500]"
-            >
-              Home
-            </a>
-            <a
-              href="#"
-              className="block md:inline-block md:mt-0 text-center text-[#00000080] dark:text-white font-[500]"
-            >
-              About Us
-            </a>
-            <a
-              href="#"
-              className="block md:inline-block text-center text-[#00000080] dark:text-white font-[500]"
-            >
-              Features
-            </a>
-            <a
-              href="#"
-              className="block md:inline-block text-center text-[#00000080] dark:text-white font-[500]"
-            >
-              Pricing
-            </a>
-            <a
-              href="#"
-              className="block md:inline-block text-center text-[#00000080] dark:text-white font-[500]"
-            >
-              FAQs
-            </a>
-          </div>
+          {isAuthenticated && pathname === "/" ? (
+            renderNavLinks()
+          ) : isAuthenticated ? (
+            <div className="text-sm flex md:flex-row flex-col items-center justify-center gap-4">
+              <a
+                href="#"
+                className="block text-sm md:inline-block text-center text-[#00000080] dark:text-white font-[500] ms-4"
+              >
+                Contact Support
+              </a>
+            </div>
+          ) : (
+            renderNavLinks()
+          )}
           <div className="text-center ms-auto flex-col md:flex-row flex items-center justify-center gap-4 md:pt-0 pt-5">
-            <a
-              href="#"
-              className="block text-sm md:inline-block text-center text-[#00000080] dark:text-white font-[500]"
-            >
-              Contact Us
-            </a>
             <Button asChild className="rounded-full h-8">
               <Link
                 href={
-                  pathname === "/market-access" ? "/auth/login" : "/market-access"
+                  isAuthenticated
+                    ? "#"
+                    : pathname === "/market-intelligence"
+                    ? "/auth/login"
+                    : "/market-intelligence"
                 }
               >
-                {pathname === "/market-access"
+                {isAuthenticated
+                  ? `Hi, ${userName}`
+                  : pathname === "/market-intelligence"
                   ? "Login"
-                  : "Explore Market Access"}
+                  : "Market Intelligence"}
               </Link>
             </Button>
           </div>
