@@ -73,13 +73,15 @@ export default function NavigationBar() {
     <nav className="fixed top-0 left-0 right-0 bg-[#ffffffb2] backdrop-blur-xl md:px-4 border-b border-b-[#EDEDED] z-50">
       <div className="flex items-center justify-between flex-wrap max-w-[1040px] mx-auto px-4 md:px-0">
         <div className="flex items-center flex-shrink-0 text-white py-1">
-          <Image
-            src="/images/agriguard-logo.svg"
-            className="w-auto h-auto"
-            alt="ecocan logo"
-            width={46}
-            height={46}
-          />
+          <Link href="/">
+            <Image
+              src="/images/agriguard-logo.svg"
+              className="w-auto h-auto"
+              alt="agriguard logo"
+              width={46}
+              height={46}
+            />
+          </Link>
         </div>
         <div className="block md:hidden">
           <button
