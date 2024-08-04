@@ -5,6 +5,16 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { LogOut, User } from "lucide-react";
 
 export default function NavigationBar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,23 +23,29 @@ export default function NavigationBar() {
   const [userName, setUserName] = useState("");
 
   useEffect(() => {
-    // Check if the user is authenticated by looking for the user data in localStorage
-    const userPhone = localStorage.getItem("user_phone");
-    const userEmail = localStorage.getItem("user_email");
-    const firstName = localStorage.getItem("first_name");
+    const checkAuthentication = () => {
+      const userPhone = localStorage.getItem("user_phone");
+      const userEmail = localStorage.getItem("user_email");
+      const firstName = localStorage.getItem("first_name");
 
-    if (userPhone || userEmail || firstName) {
-      setIsAuthenticated(true);
-      setUserName(firstName || userEmail || "User");
-    }
+      if (userPhone || userEmail || firstName) {
+        setIsAuthenticated(true);
+        setUserName(firstName || userEmail || "Buyer");
+      } else {
+        setIsAuthenticated(false);
+      }
+    };
 
-    if (isOpen) {
-      document.body.classList.add("overflow-hidden");
-    } else {
-      document.body.classList.remove("overflow-hidden");
-    }
+    // Check authentication initially
+    checkAuthentication();
+
+    const handleStorageChange = () => {
+      checkAuthentication();
+    };
+    window.addEventListener("storage", handleStorageChange);
 
     return () => {
+      window.removeEventListener("storage", handleStorageChange);
       document.body.classList.remove("overflow-hidden");
     };
   }, [isOpen]);
@@ -43,25 +59,19 @@ export default function NavigationBar() {
         Home
       </a>
       <a
-        href="#"
-        className="block md:inline-block md:mt-0 text-center text-[#00000080] dark:text-white font-[500]"
-      >
-        About Us
-      </a>
-      <a
-        href="#"
+        href="#features"
         className="block md:inline-block text-center text-[#00000080] dark:text-white font-[500]"
       >
         Features
       </a>
       <a
-        href="#"
+        href="#pricing"
         className="block md:inline-block text-center text-[#00000080] dark:text-white font-[500]"
       >
         Pricing
       </a>
       <a
-        href="#"
+        href="#faqs"
         className="block md:inline-block text-center text-[#00000080] dark:text-white font-[500]"
       >
         FAQs
@@ -71,7 +81,7 @@ export default function NavigationBar() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 bg-[#ffffffb2] backdrop-blur-xl md:px-4 border-b border-b-[#EDEDED] z-50">
-      <div className="flex items-center justify-between flex-wrap max-w-[1040px] mx-auto px-4 md:px-0">
+      <div className="flex items-center justify-between flex-wrap max-w-[1040px] mx-auto px-4 md:px-0 border-x border-x-[#edededb5] border-dashed">
         <div className="flex items-center flex-shrink-0 text-white py-1">
           <Link href="/">
             <Image
@@ -128,23 +138,43 @@ export default function NavigationBar() {
             renderNavLinks()
           )}
           <div className="text-center ms-auto flex-col md:flex-row flex items-center justify-center gap-4 md:pt-0 pt-5">
-            <Button asChild className="rounded-full h-8">
-              <Link
-                href={
-                  isAuthenticated
-                    ? "#"
-                    : pathname === "/market-intelligence"
-                    ? "/auth/login"
-                    : "/market-intelligence"
-                }
-              >
-                {isAuthenticated
-                  ? `Hi, ${userName}`
-                  : pathname === "/market-intelligence"
-                  ? "Login"
-                  : "Market Intelligence"}
-              </Link>
-            </Button>
+            {isAuthenticated ? (
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button className="rounded-full h-8">
+                    Hi, {userName}
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="w-56">
+                  <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuGroup>
+                    <DropdownMenuItem>
+                      <User className="mr-2 h-4 w-4" />
+                      <span>Dashboard</span>
+                    </DropdownMenuItem>
+                  </DropdownMenuGroup>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem>
+                    <LogOut className="mr-2 h-4 w-4" />
+                    <span>Log out</span>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            ) : (
+              <>
+                {pathname === "/" && (
+                  <Button className="rounded-full h-8">
+                    <Link href="/market-intelligence">Market Intelligence</Link>
+                  </Button>
+                )}
+                {pathname === "/market-intelligence" && (
+                  <Button className="rounded-full h-8 w-32">
+                    <Link href="/auth/login">Login</Link>
+                  </Button>
+                )}
+              </>
+            )}
           </div>
         </div>
       </div>

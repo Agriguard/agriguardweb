@@ -25,6 +25,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { GrapeIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { getCookie } from "@/lib/utils";
+import InsightsCloud from "@/components/pricing-cloud";
 
 interface Farm {
   id: number;
@@ -52,6 +53,7 @@ const MarketAccess = () => {
     try {
       const response = await fetch("http://178.128.240.96/aggregated-seasons/");
       const data = await response.json();
+      console.log(data.results)
       if (data.results) {
         setAggregatedFarms(data.results);
       } else {
@@ -96,10 +98,6 @@ const MarketAccess = () => {
 
   const handleBuyProduce = async (farmId: number, preferredAmount: string) => {
     const token = getCookie("access_token");
-    if (!isAuthenticated || !token) {
-      alert("You need to be logged in to place a bid.");
-      return;
-    }
 
     const userId = localStorage.getItem("user_id");
     const url = `http://178.128.240.96/market/bids/${userId}/create/`;
@@ -146,8 +144,14 @@ const MarketAccess = () => {
         return "/images/maize.webp";
       case "cassava":
         return "/images/cassava.webp";
+      case "pineapple":
+        return "/images/pineapple.webp";
+      case "rice":
+        return "/images/rice.png";
+      case "soyabean":
+        return "/images/soyabean.png";
       default:
-        return "/images/cassava.webp";
+        return "/images/crop.png";
     }
   };
 
@@ -164,6 +168,7 @@ const MarketAccess = () => {
           <Button type="submit">Search</Button>
         </div>
       </div>
+      <InsightsCloud/>
       <div className="max-w-[1040px] mx-auto py-8 grid grid-cols-3">
         {aggregatedFarms.length > 0 ? (
           aggregatedFarms.map((farm) => {
@@ -189,37 +194,44 @@ const MarketAccess = () => {
                   </span>
                   <br />
                   <span className="text-gray-600">
-                    Preferred Bid: ${parseFloat(preferred_bid).toFixed(2)}
+                    Price: ${parseFloat(preferred_bid).toFixed(2)}
                   </span>
                 </CardContent>
                 <CardFooter className="flex flex-col justify-between gap-2">
-                  <AlertDialog>
-                    <AlertDialogTrigger asChild>
-                      <Button
-                        className="w-full text-white group p-0 bg-primary"
-                        onClick={() => handleBuyProduce(id, preferred_bid)}
-                      >
-                        <GrapeIcon className="text-white w-4 h-4 mr-2" />
-                        Buy Produce
-                      </Button>
-                    </AlertDialogTrigger>
-                    <AlertDialogContent>
-                      <AlertDialogHeader>
-                        <AlertDialogTitle>
-                          Your bid has been received
-                        </AlertDialogTitle>
-                        <AlertDialogDescription>
-                          Our farms have been notified and will notify you
-                          confirmation.
-                        </AlertDialogDescription>
-                      </AlertDialogHeader>
-                      <AlertDialogFooter>
-                        <AlertDialogCancel>Okay</AlertDialogCancel>
-                      </AlertDialogFooter>
-                    </AlertDialogContent>
-                  </AlertDialog>
-
-                  {/* View Offer Status Button */}
+                  {isAuthenticated ? (
+                    <AlertDialog>
+                      <AlertDialogTrigger asChild>
+                        <Button
+                          className="w-full text-white group p-0 bg-primary"
+                          onClick={() => handleBuyProduce(id, preferred_bid)}
+                        >
+                          <GrapeIcon className="text-white w-4 h-4 mr-2" />
+                          Buy Produce
+                        </Button>
+                      </AlertDialogTrigger>
+                      <AlertDialogContent>
+                        <AlertDialogHeader>
+                          <AlertDialogTitle>
+                            Your bid has been received
+                          </AlertDialogTitle>
+                          <AlertDialogDescription>
+                            The agent has been notified. Check offer status for confirmation.
+                          </AlertDialogDescription>
+                        </AlertDialogHeader>
+                        <AlertDialogFooter>
+                          <AlertDialogCancel>Okay</AlertDialogCancel>
+                        </AlertDialogFooter>
+                      </AlertDialogContent>
+                    </AlertDialog>
+                  ) : (
+                    <Button
+                      className="w-full text-white group p-0 bg-primary"
+                      onClick={() => router.push("/auth/login")}
+                    >
+                      <GrapeIcon className="text-white w-4 h-4 mr-2" />
+                      Login to Buy Produce
+                    </Button>
+                  )}
                   {hasBid && (
                     <AlertDialog>
                       <AlertDialogTrigger asChild>
