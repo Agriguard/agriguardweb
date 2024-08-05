@@ -26,7 +26,7 @@ const stats = [
 
 export default function ProblemStats() {
   return (
-    <div className="hidden lg:flex items-center justify-center overflow-hidden rounded-br-xl rounded-bl-xl text-center h-full text-white bg-[url('/images/problem-stats.webp')] bg-center bg-fixed relative">
+    <div className="hidden lg:flex items-center justify-center overflow-hidden rounded-br-2xl rounded-bl-2xl text-center h-full text-white bg-[url('/images/problem-stats.webp')] bg-center bg-fixed relative">
       <div className="absolute inset-0 bg-black/35 z-10" />
       <div className="w-full h-full text-white relative flex gap-4 p-8 text-center z-20">
         {stats.map((stat) => (

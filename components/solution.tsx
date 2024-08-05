@@ -66,7 +66,7 @@ const ImageSection = () => {
 
 export default function Solution() {
   return (
-    <section className="max-w-[65rem] mx-auto mb-5 lg:mb-12 px-4 xl:px-0" id="features">
+    <section className="max-w-[65rem] mx-auto my-5 lg:my-12 px-4 xl:px-0" id="features">
       <h2 className="text-center text-primary font-bold capitalize">
         Bridge between producers and buyers
       </h2>

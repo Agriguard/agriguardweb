@@ -169,35 +169,35 @@ const MarketAccess = () => {
         </div>
       </div>
       <InsightsCloud/>
-      <div className="max-w-[1040px] mx-auto py-8 grid grid-cols-3">
+      <div className="max-w-[1040px] mx-auto py-8 grid grid-cols-2 lg:grid-cols-3 ps-2 lg:ps-0">
         {aggregatedFarms.length > 0 ? (
           aggregatedFarms.map((farm) => {
             const { id, total_yield_range, crops, preferred_bid } = farm;
             const hasBid = userBids.some((bid) => bid.aggregated_season === id);
             return (
-              <Card key={id} className="w-[20rem] mb-4">
+              <Card key={id} className="max-w-48 h-72 lg:w-[20rem] mb-4">
                 <CardHeader>
-                  <div className="h-44 overflow-hidden">
+                  <div className="h-24 lg:h-44 overflow-hidden">
                     <Image
                       src={getCropImage(crops)}
-                      className="w-full h-full rounded-md"
+                      className="w-full h-full rounded-t-md"
                       alt={crops}
                       width={200}
                       height={200}
                     />
                   </div>
-                  <CardTitle>Crop: {crops}</CardTitle>
+                  <CardTitle className="text-sm lg:text-2xl">Crop: {crops}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <span className="text-gray-600">
-                    Yield Range: {total_yield_range}
+                  <span className="text-gray-600 text-xs">
+                    Yield Range:<br/> {total_yield_range}
                   </span>
                   <br />
-                  <span className="text-gray-600">
+                  <span className="text-gray-600 text-xs">
                     Price: ${parseFloat(preferred_bid).toFixed(2)}
                   </span>
                 </CardContent>
-                <CardFooter className="flex flex-col justify-between gap-2">
+                <CardFooter className="flex flex-col justify-between gap-2 ">
                   {isAuthenticated ? (
                     <AlertDialog>
                       <AlertDialogTrigger asChild>
@@ -225,10 +225,10 @@ const MarketAccess = () => {
                     </AlertDialog>
                   ) : (
                     <Button
-                      className="w-full text-white group p-0 bg-primary"
+                      className="lg:w-full text-white group lg:p-0 bg-primary text-xs h-8 me-auto ms-2 max-w-fit"
                       onClick={() => router.push("/auth/login")}
                     >
-                      <GrapeIcon className="text-white w-4 h-4 mr-2" />
+                      <GrapeIcon className="text-white w-4 h-4 mr-2 hidden lg:flex" />
                       Login to Buy Produce
                     </Button>
                   )}
