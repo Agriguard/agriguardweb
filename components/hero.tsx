@@ -7,7 +7,7 @@ import ProblemStats from "./problem-stats";
 
 export default function Hero() {
   return (
-    <div className="min-h-screen items-center justify-center relative">
+    <div className="relative">
       <div className="relative w-full h-full bg-[url('/images/hero-bg.jpeg')] bg-cover bg-center py-20 mt-[3.1875rem] z-10">
         <div className="relative z-20 max-w-[65rem] mx-auto">
           <HeroText />
