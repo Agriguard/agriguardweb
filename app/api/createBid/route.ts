@@ -10,6 +10,8 @@ export async function POST(request: Request) {
 
   const { farmId, preferredAmount, userId } = await request.json();
 
+  console.log(`Received farmId: ${farmId}, preferredAmount: ${preferredAmount}, userId: ${userId}`);
+
   if (!userId) {
     return NextResponse.json({ error: 'User ID is required' }, { status: 400 });
   }

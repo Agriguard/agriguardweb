@@ -19,7 +19,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/components/ui/use-toast";
 
-const API_ENDPOINT = "http://178.128.240.96/auth/jwt/create";
+const API_ENDPOINT = "/api/login";
 
 const formSchema = z.object({
   phone_number: z.string().min(1, { message: "Invalid phone number" }),
@@ -124,12 +124,6 @@ export default function Login() {
                   <FormItem className="w-full">
                     <div className="flex items-center">
                       <FormLabel>Password</FormLabel>
-                      {/* <Link
-                        href="/auth/forgot-password"
-                        className="ml-auto inline-block text-sm underline"
-                      >
-                        Forgot your password?
-                      </Link> */}
                     </div>
                     <FormControl>
                       <Input
