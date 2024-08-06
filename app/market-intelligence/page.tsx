@@ -51,9 +51,9 @@ const MarketAccess = () => {
 
   const fetchAggregatedFarms = async () => {
     try {
-      const response = await fetch("http://178.128.240.96/aggregated-seasons/");
+      const response = await fetch("/api/fetchAggregatedFarms");
       const data = await response.json();
-      console.log(data.results)
+      console.log(data.results);
       if (data.results) {
         setAggregatedFarms(data.results);
       } else {
@@ -65,18 +65,13 @@ const MarketAccess = () => {
   };
 
   const fetchUserBids = async () => {
-    const token = getCookie("access_token");
-    if (!token) return;
     try {
       const userId = localStorage.getItem("user_id");
-      const response = await fetch(
-        `http://178.128.240.96/market/bids/?user_id=${userId}`,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
+      const response = await fetch(`/api/fetchUserBids`, {
+        headers: {
+          "id": userId || "",
+        },
+      });
       const data = await response.json();
       if (data.results) {
         setUserBids(data.results);
@@ -97,31 +92,23 @@ const MarketAccess = () => {
   }, []);
 
   const handleBuyProduce = async (farmId: number, preferredAmount: string) => {
-    const token = getCookie("access_token");
-
-    const userId = localStorage.getItem("user_id");
-    const url = `http://178.128.240.96/market/bids/${userId}/create/`;
-
     try {
-      const response = await fetch(url, {
-        method: "POST",
+      const userId = localStorage.getItem("user_id");
+      const response = await fetch('/api/createBid', {
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
+          'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          aggregated_season: farmId,
-          preferred_amount: preferredAmount,
-        }),
+        body: JSON.stringify({ farmId, preferredAmount, userId }),
       });
-
+  
       if (!response.ok) {
         throw new Error("Failed to create bid");
       }
-
+  
       const data = await response.json();
       console.log("Bid created successfully:", data);
-
+  
       fetchUserBids();
     } catch (error) {
       console.error("Error creating bid:", error);
@@ -175,7 +162,7 @@ const MarketAccess = () => {
             const { id, total_yield_range, crops, preferred_bid } = farm;
             const hasBid = userBids.some((bid) => bid.aggregated_season === id);
             return (
-              <Card key={id} className="max-w-48 h-72 lg:w-[20rem] mb-4">
+              <Card key={id} className=" h-72 lg:h-full lg:w-[20rem] mb-4">
                 <CardHeader>
                   <div className="h-24 lg:h-44 overflow-hidden">
                     <Image
@@ -189,11 +176,11 @@ const MarketAccess = () => {
                   <CardTitle className="text-sm lg:text-2xl">Crop: {crops}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <span className="text-gray-600 text-xs">
+                  <span className="text-gray-600 text-xs lg:text-base">
                     Yield Range:<br/> {total_yield_range}
                   </span>
                   <br />
-                  <span className="text-gray-600 text-xs">
+                  <span className="text-gray-600 text-xs lg:text-base">
                     Price: ${parseFloat(preferred_bid).toFixed(2)}
                   </span>
                 </CardContent>
@@ -225,7 +212,7 @@ const MarketAccess = () => {
                     </AlertDialog>
                   ) : (
                     <Button
-                      className="lg:w-full text-white group lg:p-0 bg-primary text-xs h-8 me-auto ms-2 max-w-fit"
+                      className="lg:w-full text-white group lg:p-0 bg-primary text-xs lg:text-base h-8 lg:h-11 rounded-full me-auto ms-2 lg:ms-0 w-fit"
                       onClick={() => router.push("/auth/login")}
                     >
                       <GrapeIcon className="text-white w-4 h-4 mr-2 hidden lg:flex" />

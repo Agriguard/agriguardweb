@@ -55,7 +55,7 @@ export default function Signup() {
       first_name: "",
       last_name: "",
       email: "",
-      username: "No-username",
+      username: "",
       affiliation: "Buyer",
       user_type: "BUYER",
       password: "",
@@ -66,8 +66,8 @@ export default function Signup() {
   });
 
   const signup = async (data: FormData) => {
-    const API_ENDPOINT = "http://178.128.240.96/auth/users/";
-    const LOGIN_ENDPOINT = "http://178.128.240.96/auth/jwt/create";
+    const API_ENDPOINT = "/api/signup";
+    const LOGIN_ENDPOINT = "/api/login";
 
     setLoading(true);
 
@@ -96,7 +96,9 @@ export default function Signup() {
 
       if (signupResponse.ok) {
         const responseData = await signupResponse.json();
-        const userId = responseData.id;
+        console.log(responseData)
+        const userId = responseData.data.id;
+        console.log(userId)
 
         localStorage.setItem("user_id", userId);
         toast({
@@ -118,8 +120,8 @@ export default function Signup() {
           const loginData = await loginResponse.json();
           const { access, refresh } = loginData;
 
-          document.cookie = `access_token=${access}; path=/;`;
-          document.cookie = `refresh_token=${refresh}; path=/;`;
+          document.cookie = `access_token=${ responseData.data.access}; path=/;`;
+          document.cookie = `refresh_token=${ responseData.data.refresh}; path=/;`;
           localStorage.setItem("user_phone", data.phone_number);
           localStorage.setItem("user_email", data.email);
           localStorage.setItem("first_name", data.first_name);
@@ -264,6 +266,23 @@ export default function Signup() {
                       <Input
                         placeholder="m@example.com"
                         type="email"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="username"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Username</FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder="buyer"
+                        type="text"
                         {...field}
                       />
                     </FormControl>
