@@ -8,6 +8,7 @@ export async function GET(request: Request) {
   }
 
   const userId = new URL(request.url).searchParams.get('user_id');
+  console.log(userId)
 
   if (!userId) {
     return NextResponse.json({ error: 'User ID is required' }, { status: 400 });

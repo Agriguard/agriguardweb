@@ -9,7 +9,6 @@ export async function POST(request: Request) {
   }
 
   const { farmId, preferredAmount, userId } = await request.json();
-
   console.log(`Received farmId: ${farmId}, preferredAmount: ${preferredAmount}, userId: ${userId}`);
 
   if (!userId) {
@@ -31,7 +30,9 @@ export async function POST(request: Request) {
     });
 
     if (!response.ok) {
-      throw new Error('Failed to create bid');
+      const errorData = await response.json();
+      console.error(`Error creating bid: ${errorData.error}`);
+      return NextResponse.json({ error: errorData.error }, { status: response.status });
     }
 
     const data = await response.json();

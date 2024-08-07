@@ -70,7 +70,7 @@ export default function InsightsCloud() {
         >
           {Array(5)
             .fill(null)
-            .map((index) => (
+            .map((_, index) => (
               <div
                 key={index}
                 className="flex shrink-0 animate-logo-cloud flex-row justify-around gap-6"
