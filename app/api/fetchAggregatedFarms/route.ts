@@ -7,7 +7,7 @@ export async function GET() {
       throw new Error('Failed to fetch data');
     }
     const data = await response.json();
-
+    console.log(data)
     return NextResponse.json(data, {
       headers: {
         'Cache-Control': 'no-cache, no-store, must-revalidate',
