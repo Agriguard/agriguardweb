@@ -144,7 +144,7 @@ const MarketAccess = () => {
       case "cassava":
         return "/images/cassava.webp";
       case "pineapple":
-        return "/images/pineapple.webp";
+        return "/images/pineapple.png";
       case "rice":
         return "/images/rice.png";
       case "soyabean":
