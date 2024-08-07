@@ -105,7 +105,7 @@ const MarketAccess = () => {
         throw new Error("User ID not found in localStorage");
       }
 
-      console.log(userId);
+      console.log('Sending bid with:', { farmId, bid_amount: preferredAmount, userId });
       const response = await fetch("/api/createBid", {
         method: "POST",
         headers: {
@@ -126,6 +126,7 @@ const MarketAccess = () => {
       console.error("Error creating bid:", error);
     }
   };
+
 
   const handleViewOfferStatus = (farmId: number) => {
     const bid = userBids.find((bid) => bid.aggregated_season === farmId);

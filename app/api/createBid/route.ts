@@ -25,7 +25,7 @@ export async function POST(request: Request) {
       },
       body: JSON.stringify({
         aggregated_season: farmId,
-        preferred_amount: preferredAmount,
+        bid_amount: preferredAmount,
       }),
     });
 
@@ -36,6 +36,7 @@ export async function POST(request: Request) {
     }
 
     const data = await response.json();
+    console.log('Server response data:', data);
     return NextResponse.json(data);
   } catch (error) {
     console.error('Error creating bid:', error);
