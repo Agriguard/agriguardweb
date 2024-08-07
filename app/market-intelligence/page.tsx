@@ -67,9 +67,9 @@ const MarketAccess = () => {
   const fetchUserBids = async () => {
     try {
       const userId = localStorage.getItem("user_id");
-      const response = await fetch(`/api/fetchUserBids`, {
+      const response = await fetch(`/api/fetchUserBids?user_id=${userId}`, {
         headers: {
-          "id": userId || "",
+          id: userId || "",
         },
       });
       const data = await response.json();
@@ -94,21 +94,26 @@ const MarketAccess = () => {
   const handleBuyProduce = async (farmId: number, preferredAmount: string) => {
     try {
       const userId = localStorage.getItem("user_id");
-      const response = await fetch('/api/createBid', {
-        method: 'POST',
+      if (!userId) {
+        throw new Error("User ID not found in localStorage");
+      }
+
+      console.log(userId);
+      const response = await fetch("/api/createBid", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({ farmId, preferredAmount, userId }),
       });
-  
+
       if (!response.ok) {
         throw new Error("Failed to create bid");
       }
-  
+
       const data = await response.json();
       console.log("Bid created successfully:", data);
-  
+
       fetchUserBids();
     } catch (error) {
       console.error("Error creating bid:", error);
@@ -155,7 +160,7 @@ const MarketAccess = () => {
           <Button type="submit">Search</Button>
         </div>
       </div>
-      <InsightsCloud/>
+      <InsightsCloud />
       <div className="max-w-[1040px] mx-auto py-8 grid grid-cols-2 lg:grid-cols-3 ps-2 lg:ps-0">
         {aggregatedFarms.length > 0 ? (
           aggregatedFarms.map((farm) => {
@@ -173,11 +178,14 @@ const MarketAccess = () => {
                       height={200}
                     />
                   </div>
-                  <CardTitle className="text-sm lg:text-2xl">Crop: {crops}</CardTitle>
+                  <CardTitle className="text-sm lg:text-2xl">
+                    Crop: {crops}
+                  </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <span className="text-gray-600 text-xs lg:text-base">
-                    Yield Range:<br/> {total_yield_range}
+                    Yield Range:
+                    <br /> {total_yield_range}
                   </span>
                   <br />
                   <span className="text-gray-600 text-xs lg:text-base">
@@ -202,7 +210,8 @@ const MarketAccess = () => {
                             Your bid has been received
                           </AlertDialogTitle>
                           <AlertDialogDescription>
-                            The agent has been notified. Check offer status for confirmation.
+                            The agent has been notified. Check offer status for
+                            confirmation.
                           </AlertDialogDescription>
                         </AlertDialogHeader>
                         <AlertDialogFooter>

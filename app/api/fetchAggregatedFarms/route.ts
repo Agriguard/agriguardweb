@@ -7,7 +7,12 @@ export async function GET() {
       throw new Error('Failed to fetch data');
     }
     const data = await response.json();
-    return NextResponse.json(data);
+
+    return NextResponse.json(data, {
+      headers: {
+        'Cache-Control': 'no-store',
+      },
+    });
   } catch (error) {
     return NextResponse.error();
   }
