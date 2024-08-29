@@ -1,11 +1,17 @@
+"use client";
+
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import HeroText from "./hero-text";
 import { Button } from "./ui/button";
 import { LucideDownload, LucideTrendingUp } from "lucide-react";
 import ProblemStats from "./problem-stats";
 
 export default function Hero() {
+  const [buttonText, setButtonText] = useState("Explore Market");
+  const handleClick = () => {
+    setButtonText("Coming Soon");
+  };
   return (
     <div className="relative">
       <div className="relative w-full h-full bg-[url('/images/hero-bg.jpeg')] bg-cover bg-center py-20 mt-[3.1875rem] z-10">
@@ -20,12 +26,15 @@ export default function Hero() {
             optimize yields, and connect them to profitable buyers.
           </p>
           <div className="mx-auto flex gap-4 justify-center">
-            <Link href="/market-intelligence">
-              <Button className="rounded-full">
-                Explore Market
-                <LucideTrendingUp className="ms-2 h-4 w-4" />
-              </Button>
-            </Link>
+            <Button
+              className="rounded-full"
+              onClick={handleClick}
+              disabled={buttonText === "Coming Soon"}
+            >
+              {buttonText}
+              <LucideTrendingUp className="ms-2 h-4 w-4" />
+            </Button>
+
             <Link
               href="https://play.google.com/store/apps/details?id=com.agriguard.mobile"
               target="_blank"
@@ -48,12 +57,17 @@ export default function Hero() {
             A Growing Crisis
           </h2>
           <p className="text-center lg:text-xl font-light lg:w-4/5 mx-auto my-5 tracking-wide">
-            <span className="text-secondary font-semibold">70% of farmers in Africa</span> face disrupted production cycles
-            and <br/> a <span className="text-secondary font-semibold">10% drop in crop yield</span> due to insufficient
-            information, poor management and generalised data, impacting food
-            security and farmer livelihood
+            <span className="text-secondary font-semibold">
+              70% of farmers in Africa
+            </span>{" "}
+            face disrupted production cycles and <br /> a{" "}
+            <span className="text-secondary font-semibold">
+              10% drop in crop yield
+            </span>{" "}
+            due to insufficient information, poor management and generalised
+            data, impacting food security and farmer livelihood
           </p>
-          <ProblemStats/>
+          <ProblemStats />
         </div>
       </div>
     </div>

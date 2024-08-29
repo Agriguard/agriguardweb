@@ -22,7 +22,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Textarea } from "@/components/ui/textarea";
 
-// Define the schema for form validation using Zod
 const formSchema = z.object({
   fullName: z.string().min(1, "Full name is required"),
   contact: z
@@ -67,10 +66,10 @@ export function ContactForm() {
   };
 
   return (
-    <Card className="max-w-xl mb-12">
+    <Card className="max-w-xl mb-12 py-6 lg:py-0">
       <CardHeader>
         <CardTitle className="text-xl">Contact Us</CardTitle>
-        <CardDescription>Enter your information to get started</CardDescription>
+        <CardDescription className="ps-2 md:ps-0">Enter your information to get started</CardDescription>
       </CardHeader>
       <CardContent>
         <Form {...form}>

@@ -16,7 +16,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { LogOut, User } from "lucide-react";
 
-export default function NavigationBar() {
+export default function AuthNavigationBar() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
