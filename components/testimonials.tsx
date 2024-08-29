@@ -24,7 +24,7 @@ const testimonials = [
   },
   {
     id: 3,
-    name: "KGF Farms",
+    name: "KJF Farms",
     description:
       "Agriguard has become an indispensable tool. They give me all the weather info I need and enable me to provide timely and tailored support to farmers in our cooperative. This helps me help farmers better.",
     profession: "Cooperative Head",

@@ -17,7 +17,7 @@ const TrustedBy = () => {
   return (
     <div className="w-full py-12">
       <div className="flex w-full flex-col items-center justify-center px-4 md:px-8">
-        <div className="font-medium uppercase">Trusted by</div>
+        <div className="font-medium uppercase">Backed by</div>
         <div className="flex gap-5">
           {logos.map((logo) => (
             <div key={logo.id} className="w-32 h-16">
