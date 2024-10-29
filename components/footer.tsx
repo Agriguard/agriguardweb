@@ -19,6 +19,9 @@ const navigation = {
     { name: "MEST Africa" },
     { name: "20 Aluguntugui St, East Legon" },
     { name: "Accra, Ghana" },
+    { name: "+237 53 256 889" },
+    { name: "OIC, Molyko" },
+    { name: "Bamenda, Cameroon" },
   ],
 };
 
@@ -49,22 +52,38 @@ const Footer = () => {
               yields, robust markets and related agri-services.
             </p>
             <div className="flex gap-4">
-                <Link href="https://web.facebook.com/people/Agriguard/61555017154793/">
-                    <Image src="/images/facebook.svg" alt="facebook logo" width={50} height={50} className=" stroke-white w-6 h-6"/>
-                </Link>
-                <Link href="https://www.linkedin.com/company/agriguard-ltd/">
-                    <Image src="/images/linkedin.svg" alt="linkedin logo" width={50} height={50} className=" stroke-white w-6 h-6"/>
-                </Link>
-                <Link href="https://x.com/agri_guard">
-                    <Image src="/images/twitter.svg" alt="twitter logo" width={50} height={50} className=" stroke-white w-6 h-6"/>
-                </Link>
+              <Link href="https://web.facebook.com/people/Agriguard/61555017154793/">
+                <Image
+                  src="/images/facebook.svg"
+                  alt="facebook logo"
+                  width={50}
+                  height={50}
+                  className=" stroke-white w-6 h-6"
+                />
+              </Link>
+              <Link href="https://www.linkedin.com/company/agriguard-ltd/">
+                <Image
+                  src="/images/linkedin.svg"
+                  alt="linkedin logo"
+                  width={50}
+                  height={50}
+                  className=" stroke-white w-6 h-6"
+                />
+              </Link>
+              <Link href="https://x.com/agri_guard">
+                <Image
+                  src="/images/twitter.svg"
+                  alt="twitter logo"
+                  width={50}
+                  height={50}
+                  className=" stroke-white w-6 h-6"
+                />
+              </Link>
             </div>
           </div>
           <div className="mt-16 grid grid-cols-2 gap-14 md:grid-cols-2 lg:mt-0 xl:col-span-2">
             <div className="md:mt-0">
-              <h3 className="font-semibold leading-6 text-primary">
-                Links
-              </h3>
+              <h3 className="font-semibold leading-6 text-primary">Links</h3>
               <div className="mt-6 space-y-4">
                 {navigation.connect.map((item) => (
                   <div key={item.name}>
@@ -88,9 +107,7 @@ const Footer = () => {
                 <div className="mt-6 space-y-4">
                   {navigation.company.map((item) => (
                     <div key={item.name}>
-                      <p
-                        className="text-sm leading-6 text-white hover:text-white/90 dark:text-gray-600 hover:dark:text-gray-200"
-                      >
+                      <p className="text-sm leading-6 text-white hover:text-white/90 dark:text-gray-600 hover:dark:text-gray-200">
                         {item.name}
                       </p>
                     </div>
